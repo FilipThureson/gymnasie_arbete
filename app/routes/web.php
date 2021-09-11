@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\courseController;
+use App\Http\Controllers\homeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [homeController::class, 'home']);
+
+Route::get('/login', function (){
+    return "loginplease";
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/{course}', [courseController::class, 'firstPage']);
+
+Route::get('/{course}/{id}', [courseController::class, 'oneQuestion'])->where('id', '[0-9]+');
