@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d1b43bc-019d-4fc6-8dcc-062333223fc9" name="Changes" comment="" />
+    <list default="true" id="4d1b43bc-019d-4fc6-8dcc-062333223fc9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gymnasie_arbete.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gymnasie_arbete.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.env" beforeDir="false" afterPath="$PROJECT_DIR$/app/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/app/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -135,6 +144,8 @@
       <path value="$PROJECT_DIR$/app/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/app/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/app/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/app/vendor/league/oauth1-client" />
+      <path value="$PROJECT_DIR$/app/vendor/laravel/socialite" />
     </include_path>
   </component>
   <component name="ProjectId" id="1xzfb5AhtKxemTTc5WC4ra4Qq13" />
@@ -159,6 +170,9 @@
       <option name="presentableId" value="Default" />
       <updated>1631362907139</updated>
       <workItem from="1631362909721" duration="907000" />
+      <workItem from="1631608494976" duration="103000" />
+      <workItem from="1631622788936" duration="338000" />
+      <workItem from="1631652429532" duration="433000" />
     </task>
     <servers />
   </component>

@@ -119,6 +119,8 @@
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/phpdocumentor/type-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/graham-campbell/result-type" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/league/oauth1-client" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/laravel/socialite" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
