@@ -1,8 +1,9 @@
-    <?php
+<?php
 
 use App\Http\Controllers\courseController;
 use App\Http\Controllers\homeController;
-use Illuminate\Support\Facades\Route;
+    use App\Http\Controllers\loginController;
+    use Illuminate\Support\Facades\Route;
     use Laravel\Socialite\Facades\Socialite;
 
     /*
@@ -18,19 +19,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [homeController::class, 'home']);
 
-Route::get('/login', function (){
-    return "loginplease" . "<a href='/auth/redirect'>Login!</a>";
+Route::get('/login', [loginController::class, 'page']);
+
+Route::get('/logout', function(){
+   \Illuminate\Support\Facades\Session::flush();
+   return redirect('/');
 });
 
-Route::get('/{course}', [courseController::class, 'firstPage']);
+Route::get('/{course}', [courseController::class, 'firstPage'])->where('course', '[A-z]+');
 
 Route::get('/{course}/{id}', [courseController::class, 'oneQuestion'])->where('id', '[0-9]+');
 
-Route::get('/auth/redirect', function () {
-    return Socialite::driver('google')->redirect();
-});
 
-Route::get('/auth/callback', function () {
-    $user = Socialite::driver('google')->user();
-    return print_r($user);
-});
+//LOGIN ROUTES
+
+Route::get('/auth/redirect', [loginController::class, 'redirect']);
+
+Route::get('/auth/callback', [loginController::class, 'login']);

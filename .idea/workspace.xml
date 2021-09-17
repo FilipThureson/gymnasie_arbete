@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d1b43bc-019d-4fc6-8dcc-062333223fc9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gymnasie_arbete.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gymnasie_arbete.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/Http/Controllers/loginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/Models/Course.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/Models/handleSession.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.env" beforeDir="false" afterPath="$PROJECT_DIR$/app/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/courseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/Http/Controllers/courseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/homeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/Http/Controllers/homeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -172,11 +174,27 @@
       <workItem from="1631362909721" duration="907000" />
       <workItem from="1631608494976" duration="103000" />
       <workItem from="1631622788936" duration="338000" />
-      <workItem from="1631652429532" duration="433000" />
+      <workItem from="1631652429532" duration="1545000" />
+      <workItem from="1631692062769" duration="6273000" />
+      <workItem from="1631779517562" duration="310000" />
+      <workItem from="1631823314779" duration="3108000" />
+      <workItem from="1631864971807" duration="2410000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

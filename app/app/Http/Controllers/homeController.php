@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class homeController extends Controller
 {
     public static function home()
     {
-        return "<h1>homepage</h1>";
+        if(Session::get('google_token') == null){
+            return redirect('/login');
+        }
+
+        return view("home",  ['courses' => Course::get_all()]);
     }
 }
