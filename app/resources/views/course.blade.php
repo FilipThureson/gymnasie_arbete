@@ -8,6 +8,8 @@
     <title>Document</title>
 </head>
 <body>
+@include('components/nav')
+
     <h1>{{$course->course_pk}}</h1>
     @foreach($all_questions as $question)
         <a style="text-decoration: none; color: #1a202c" href="/{{$course->course_pk}}/{{$question->q_pk}}">

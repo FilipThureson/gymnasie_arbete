@@ -8,9 +8,9 @@
     <title>Document</title>
 </head>
 <body>
+    @include('components/nav')
     @foreach($courses as $course)
         <a href="{{$course->course_pk}}">{{$course->course_pk}}</a>
     @endforeach
-    <a href="/logout">Logout!</a>
 </body>
 </html>

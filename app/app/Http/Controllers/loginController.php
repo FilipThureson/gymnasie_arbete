@@ -9,13 +9,14 @@ use Laravel\Socialite\Facades\Socialite;
 
 class loginController
 {
+    //Loginpage
     public static function page(){
         if(Session::get('google_token') != null){
             return redirect('/');
         }
         return "loginplease" . "<a href='/auth/redirect'>Login!</a>";
     }
-
+    //handle session and db after login
     public static function login(){
         if(Session::get('google_token') != null){
             return redirect('/');
@@ -31,6 +32,8 @@ class loginController
             abort(403);
         }
     }
+
+    //Rederict to socialite goolge oauth2
     public static function redirect(){
         if(Session::get('google_token') != null){
             return redirect('/');
