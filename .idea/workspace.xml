@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d1b43bc-019d-4fc6-8dcc-062333223fc9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/public/btn_google_signin_light_normal_web@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/public/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/loginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/Http/Controllers/loginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/components/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/views/components/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/views/login.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="4d1b43bc-019d-4fc6-8dcc-062333223fc9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
