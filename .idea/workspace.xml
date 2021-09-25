@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d1b43bc-019d-4fc6-8dcc-062333223fc9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/public/btn_google_signin_light_normal_web@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/public/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/loginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/Http/Controllers/loginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/components/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/views/components/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/views/login.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +190,7 @@
       <workItem from="1632332625170" duration="2317000" />
       <workItem from="1632387841480" duration="1861000" />
       <workItem from="1632567106454" duration="14000" />
-      <workItem from="1632567281480" duration="419000" />
+      <workItem from="1632567281480" duration="877000" />
     </task>
     <servers />
   </component>

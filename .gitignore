@@ -1,4 +1,2 @@
-*.env
-app/config/services.php
-services.php
+    
 .idea/workspace.xml
