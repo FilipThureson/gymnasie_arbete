@@ -14,7 +14,7 @@ class loginController
         if(Session::get('google_token') != null){
             return redirect('/');
         }
-        return "loginplease" . "<a href='/auth/redirect'>Login!</a>";
+        return view('login');
     }
     //handle session and db after login
     public static function login(){

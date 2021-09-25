@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d1b43bc-019d-4fc6-8dcc-062333223fc9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/resources/views/components/nav.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/public/btn_google_signin_light_normal_web@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/public/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/loginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/Http/Controllers/loginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/course.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/views/course.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/views/components/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/views/components/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/views/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/views/login.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,15 +148,19 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1xzfb5AhtKxemTTc5WC4ra4Qq13" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../wamp64/www/laravel/googleLogin" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -186,6 +192,10 @@
       <workItem from="1631995925483" duration="9000" />
       <workItem from="1632118569298" duration="521000" />
       <workItem from="1632247214814" duration="114000" />
+      <workItem from="1632332625170" duration="2317000" />
+      <workItem from="1632387841480" duration="1861000" />
+      <workItem from="1632567106454" duration="14000" />
+      <workItem from="1632567281480" duration="419000" />
     </task>
     <servers />
   </component>
@@ -203,5 +213,8 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
