@@ -23,7 +23,6 @@
         @endforeach
       </div>
     </main>
-    <footer>
-    </footer>
+    @include('components/footer')
   </body>
 </html>

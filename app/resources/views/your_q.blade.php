@@ -25,5 +25,6 @@
         </div>
         </a>
     @endforeach
+    @include('components/footer')
 </body>
 </html>

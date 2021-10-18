@@ -34,6 +34,8 @@ Route::get('/{course}', [courseController::class, 'firstPage'])->where('course',
 
 Route::post('/{course}/upload', [courseController::class, 'upload']);
 
+Route::post('/{course}/getAll', [courseController::class, 'ajax_getAll']);
+
 Route::get('/{course}/{id}', [courseController::class, 'oneQuestion'])->where('id', '[0-9]+');
 
 
