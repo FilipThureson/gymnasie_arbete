@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\Questions;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
 
 class courseController extends Controller
@@ -33,4 +33,9 @@ class courseController extends Controller
         }
         return var_dump($questions);
     }
+    /*
+    public static function upload($course){
+        re
+    }
+    */
 }

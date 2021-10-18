@@ -17,6 +17,6 @@ class questionController extends Controller
             "course_pk" => "Dina Frågor"
         ];
 
-        return view('course', ['course' => (object) $course, 'all_questions' => $questions]);
+        return view('your_q', ['course' => (object) $course, 'all_questions' => $questions]);
     }
 }

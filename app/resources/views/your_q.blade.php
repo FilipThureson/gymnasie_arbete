@@ -12,17 +12,7 @@
 <body>
 
     @include('components/nav')
-    <!--
-    <div id="upload">
-        <form id="upload_form">
-            <input id="course" type="hidden" value="{{ $course->course_pk }}">
-            <input id="user_fk" type="hidden" value="{{ Session::get('email') }}">
-            <input id="title" placeholder="Titel"><br>
-            <textarea rows="10" cols="30" id="q_text" style="resize: none"></textarea><br>
-            <button id="upload_btn">Ladda Upp!</button>
-        </form>
-    <div>
-    -->
+
     <h1>{{$course->course_pk}}</h1>
     @foreach($all_questions as $question)
         <a style="text-decoration: none; color: #1a202c" href="/{{$question->course_fk}}/{{$question->q_pk}}">

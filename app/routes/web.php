@@ -32,6 +32,8 @@ Route::get('/questions/user/{id}', [questionController::class, 'yourQuestions'])
 
 Route::get('/{course}', [courseController::class, 'firstPage'])->where('course', '[A-z]+');
 
+Route::post('/{course}/upload', [courseController::class, 'upload']);
+
 Route::get('/{course}/{id}', [courseController::class, 'oneQuestion'])->where('id', '[0-9]+');
 
 
