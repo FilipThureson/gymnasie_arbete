@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\courseController;
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\questionController;
+
     use App\Http\Controllers\loginController;
     use Illuminate\Support\Facades\Route;
     use Laravel\Socialite\Facades\Socialite;
@@ -25,6 +27,8 @@ Route::get('/logout', function(){
    \Illuminate\Support\Facades\Session::flush();
    return redirect('/');
 });
+
+Route::get('/questions/user/{id}', [questionController::class, 'yourQuestions']);
 
 Route::get('/{course}', [courseController::class, 'firstPage'])->where('course', '[A-z]+');
 
