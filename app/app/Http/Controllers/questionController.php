@@ -12,6 +12,9 @@ class questionController extends Controller
         if(Session::get('google_token') == null){
             return redirect('/');
         }
+        if($id != Session::get('email')){
+            abort(401);
+        }
         $questions = Questions::get_your($id);
         $course = [
             "course_pk" => "Dina Frågor"
