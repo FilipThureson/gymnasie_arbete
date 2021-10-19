@@ -42,10 +42,11 @@ class courseController extends Controller
     public static function upload($course_pk){
         $data = [
             'course' => $course_pk,
-            'user_fk' => request::post('user_fk'),
-            'title' => request::post('title'),
-            'q_text' => request::post('q_text')
+            'user_fk' => filter_var(request::post('user_fk'), FILTER_SANITIZE_SPECIAL_CHARS),
+            'title' => filter_var(request::post('title'), FILTER_SANITIZE_SPECIAL_CHARS),
+            'q_text' => filter_var(request::post('q_text'), FILTER_SANITIZE_SPECIAL_CHARS)
         ];
+
         $test = Questions::upload((object)$data);
         return $test;
     }
