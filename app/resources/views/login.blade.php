@@ -6,9 +6,9 @@
 </head>
 <body>
     <div class="loginDiv">
-        <img id="logo" src="logo.png" alt="logo">
+        <img id="logo" src="{{ asset('img/logo.png') }}" alt="logo">
         <p>Logga in med @kfvelev-google konto för få tillgång till Auxilium</p>
-        <a id="google_link" href="/auth/redirect"><img id="google_img"src="btn_google_signin_light_normal_web@2x.png"></a>
+        <a id="google_link" href="/auth/redirect"><img id="google_img"src="{{ asset('img/btn_google_signin_light_normal_web@2x.png') }}"></a>
     </div>
 </body>
 </html>
