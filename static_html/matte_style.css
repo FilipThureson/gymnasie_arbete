@@ -142,26 +142,26 @@ main{
 main h1{
   text-align: center;
 }
-.question{
+.course{
   position: relative;
   max-width: 100%;
   height: auto;
   border-top: 1px solid var(--text_color);
 }
-.question span{
+.course span{
   position: absolute;
   right: 5%;
   font-size: .9rem;
   font-style: italic;
 }
-.question div{
+.course div{
   display: inline;
   padding: 10px;
   background-color: #fff4;
   border-radius: 2em;
   transition: .3s;
 }
-.question div:hover{
+.course div:hover{
   color: #1E90FF;
   background-color: #fff2;
 }

@@ -13,7 +13,7 @@
 
         @foreach ($courses as $course)
         
-        <div class="question">
+        <div class="course">
             <h2>{{ $course->course_pk }}</h2>
             <div><p>0</p></div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>

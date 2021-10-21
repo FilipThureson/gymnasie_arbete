@@ -1,0 +1,123 @@
+
+  /* WRAPPER */
+  #fixedWrapper{
+    position: fixed;
+    width: 100%;
+  }
+  
+  
+  /* MAIN */
+  main{
+    position: static;
+    padding-top: 75px;
+    height: 100vh;
+    width: 90%;
+    padding-left: 50px;
+    overflow-y: scroll;
+  }
+  main h1{
+    text-align: center;
+  }
+  .question{
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    border-top: 1px solid var(--text_color);
+  }
+  .question span{
+    position: absolute;
+    right: 5%;
+    font-size: .9rem;
+    font-style: italic;
+  }
+  .question div{
+    display: inline;
+    padding: 10px;
+    background-color: #fff4;
+    border-radius: 2em;
+    transition: .3s;
+  }
+  .question div:hover{
+    color: #1E90FF;
+    background-color: #fff2;
+  }
+  
+  
+  /* ASIDE */
+  aside{
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 10%;
+    height: calc(100%);
+    text-align: center;
+    border-left: 1px solid var(--text_color);
+  }
+  #aside_btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 37.5px));
+    height: 25px;
+    width: auto;
+    transition: .3s;
+  }
+  #aside_btn:hover{
+    cursor: pointer;
+    fill: var(--link_color);
+  }
+  
+  aside h2{
+    margin-top: 95px;
+  }
+  ::placeholder{
+    color: var(--text_color);
+  }
+  
+  
+  #slide{
+    position: absolute;
+    top: 75px;
+    height: calc(100% - 75px);
+    width: 100%;
+    background-color: var(--body_bg_color);
+    left:100%;
+    transition: .5s;
+    text-align: center;
+  }
+  #slide > div{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #slide button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #slide .svg_icon{
+    width: 20px;
+    height: auto;
+    margin: 20px;
+    transition: .5s;
+  }
+  #slide .svg_icon:hover{
+    cursor: pointer;
+    fill: var(--link_color);
+  }
+  #slide input{
+    text-align: center;
+    background-color: var(--q_bg_color);
+    border: 1px solid var(--text_color);
+    width: 40%;
+    font-size: 1rem;
+    margin: 5px;
+    padding: 15px;
+  }
+  #slide textarea{
+    resize: none;
+    background-color: transparent;
+  }
+  

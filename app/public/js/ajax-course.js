@@ -70,18 +70,29 @@ function renderQuestions(data){
                 seconds += " Sekunder Sedan"
             }
 
-            $("#questions").append(`
-                <a style="text-decoration: none; color: #1a202c" href="/questions/${question.q_pk}">
-                <div style="border-bottom: 1px solid #4a5568">
-                    <h4>${question.title}</h4>
-                    <p> ${question.name}</p>
-                    <p>${question.q_text}</p>
-                    <p>${seconds}</p>
+            $("main").append(`
+                <div class="question">
+                <br>
+                <h3>${question.title}</h3><span>${seconds}, av <a href="#">@${question.name}</a></span>
+                <p>${question.q_text}</p>
+                <br>
+                <br>
                 </div>
-                </a>
             `)
             
-            
+            /*
+
+            <div class="question">
+            <br>
+            <h3>Title</h3><span>69 timmar sedan, av <a href="#">@Angel Strömstedt</a></span>
+            <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim </p>
+            <div>
+                <a href="#">Svara</a>
+            </div>
+            <br>
+            <br>
+            </div>
+            */
         });
     }else{
         $("#questions").html("<h5>Oooops Här fanns det inga frågor! Publicera den första!</h5>");
@@ -93,3 +104,26 @@ function renderQuestions(data){
 $(document).ready(function(){
     loadQuestions();
 });
+
+
+//Upload-aside movement
+tinymce.init({
+    selector: '#q_text',
+    menubar: false,
+    body_class: "mceBlackBody"
+  });
+
+  //OPEN SLIDE
+  document.getElementById("aside_btn").addEventListener("click", function(){
+    document.getElementById("slide").style.left=0;
+  });
+
+  //CLOSE SLIDE
+  document.getElementById("close_slide").addEventListener("click", function(){
+    document.getElementById("slide").style.left="100%";
+  });
+
+  //UPLOAD
+  document.getElementById("upload_btn").addEventListener("click", function(){
+
+  });

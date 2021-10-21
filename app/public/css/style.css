@@ -8,110 +8,140 @@ cyan: #23E8FA;
 */
 
 /* GENERAL */
-:root {
+:root{
     --body_bg_color: #181d26;
-    --header_bg_color: #323d54;
-    --q_bg_color: #1a202c;
+    --header_bg_color: #323D54;
+    --q_bg_color: #1A202C;
+    --link_color: #23E8FA;
     --shadow: 0px 0px 20px 2px black;
-    --text_color: #e3e3e3;
-}
-
-*,
-*::after,
-*::before {
+    --text_color: #E3E3E3;
+  }
+  
+  *, *::after, *::before{
     color: var(--text_color);
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
-p {
+  }
+  p{
     padding: 15px;
-}
-a {
+  }
+  a{
     text-decoration: none;
-}
-h1 {
-}
-h2 {
+    color: var(--link_color);
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+  h1{
+    padding: 20px;
+  }
+  h2{
     font-size: 1.3rem;
     font-weight: 200;
     padding: 20px;
-    color: #1e90ff;
-}
-h3 {
-    font-size: 1.1rem;
-    font-weight: 200;
+    color: #1E90FF;
+  }
+  h3{
+    display:inline;
+    font-size: 1.3rem;
+    font-weight: bold;
     padding: 15px;
-}
-
-/* BODY */
-body {
+  }
+  body{
+    position: relative;
     height: 100vh;
     width: 100%;
     background-color: var(--body_bg_color);
-}
-
-/* HEADER */
-header {
-    min-height: 75px;
+    overflow: hidden;
+  }
+  .wrapper{
+    display: flex;
+  }
+  
+  /*SCROLLBAR*/
+  ::-webkit-scrollbar{
+    width: 10px;
+  }
+  ::-webkit-scrollbar-thumb{
+    background: rgba(30, 144, 255, 0.3);
+  }
+  ::-webkit-scrollbar-track{
+    background: linear-gradient(#5e6982 0%, #323D54 50%, #5e6982 100%);
+    background: var(--header_bg_color);
+  }
+  
+  
+  
+  /* HEADER */
+  header{
+    position: fixed;
+    height: 75px;
+    width: 100%;
     background-color: var(--header_bg_color);
-    position: relative;
     box-shadow: var(--shadow);
     margin-bottom: 20px;
-}
-header > a img {
+    z-index: 2;
+  }
+  header > a img{
     height: 50px;
     width: auto;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     left: 20%;
-}
-header ul {
+  }
+  header ul{
     position: absolute;
     width: 50%;
     height: 100%;
     left: 50%;
-
+  
     display: flex;
     justify-content: space-around;
     align-items: center;
-
+  
     list-style: none;
-}
-header ul a {
+  }
+  header ul a{
     position: relative;
-}
-header ul li a::before {
+    color: var(--text_color);
+    text-decoration: none;
+  }
+  header ul a:hover{
+    text-decoration: none;
+  }
+  header ul li a::before{
     content: "";
     position: absolute;
     background-color: var(--text_color);
-    height: 0.07rem;
+    height: .07rem;
     width: 0;
     left: 50%;
     bottom: 0px;
-    transition: 0.3s;
-}
-header ul li a:hover::before {
+    transition: .3s;
+  }
+  header ul li a:hover::before{
     width: 100%;
     left: 0;
-}
-#icon {
+  }
+  #icon{
     border-radius: 50%;
     height: 55px;
     box-shadow: 0 0 5px 1px #000;
-    transition: 0.3s;
-}
-#icon:hover {
-    /*box-shadow: 0 0 5px 3px #000;*/
-}
+    transition: .3s;
+  }
+  
+  
 
 /* MAIN */
 main {
     height: auto;
     width: 100%;
-    position: relative;
+    position: fixed;
+    overflow-y: scroll;
+    padding-top: 75px;
 }
 main h1 {
     text-align: center;
@@ -123,7 +153,7 @@ main h1 {
     justify-content: center;
     flex-wrap: wrap;
 }
-.question {
+.course {
     margin: 20px;
     width: 250px;
     height: 250px;
@@ -132,10 +162,10 @@ main h1 {
     border-radius: 0.5em;
     position: relative;
 }
-.question h2 {
+.course h2 {
     text-align: center;
 }
-.question div {
+.course div {
     background-color: #fff4;
     height: 30px;
     width: 30px;
@@ -144,17 +174,17 @@ main h1 {
     top: 10px;
     right: 10px;
 }
-.question div p {
+.course div p {
     padding: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.question div:hover {
+.course div:hover {
     cursor: default;
 }
-.question a {
+.course a {
     position: absolute;
     bottom: 10px;
     left: 50%;
@@ -164,7 +194,7 @@ main h1 {
     border-radius: 2em;
     transition: 0.3s;
 }
-.question a:hover {
+.course a:hover {
     color: #1e90ff;
     background-color: #fff2;
 }

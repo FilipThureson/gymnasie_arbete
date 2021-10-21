@@ -1,0 +1,28 @@
+
+:root{
+    --body_bg_color: #181d26;
+    --header_bg_color: #323D54;
+    --q_bg_color: #1A202C;
+    --link_color: #23E8FA;
+    --shadow: 0px 0px 20px 2px black;
+    --text_color: #E3E3E3;
+}
+
+main{
+    width: 45%;
+}
+
+
+.question{
+    width: 100%;
+    border: 2px solid #1A202C;
+}
+
+.question .row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.question a{
+    color: var(--link_color);
+}
