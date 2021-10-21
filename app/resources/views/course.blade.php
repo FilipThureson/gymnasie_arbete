@@ -1,25 +1,33 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    @include('components/head')
+    <style>
+        #upload form button{
+            color: black;
+            font-size: large
+        }
+    </style>
 </head>
 <body>
-@include('components/nav')
 
+    @include('components/nav')
+
+    <div id="upload">
+        <form id="upload_form">
+            <input style="color: black" id="course" type="hidden" value="{{ $course->course_pk }}">
+            <input style="color: black"  id="user_fk" type="hidden" value="{{ Session::get('email') }}">
+            <input style="color: black"  id="title" placeholder="Titel"><br>
+            <textarea style="color: black" rows="10" cols="30" id="q_text" style="resize: none"></textarea><br>
+            <button id="upload_btn">Ladda Upp!</button>
+        </form>
+    <div>
+    
     <h1>{{$course->course_pk}}</h1>
-    @foreach($all_questions as $question)
-        <a style="text-decoration: none; color: #1a202c" href="/{{$course->course_pk}}/{{$question->q_pk}}">
-        <div style="border-bottom: 1px solid #4a5568">
-            <h4>{{$question->title}}</h4>
-            <p> {{$question->user_fk}}</p>
-            <p>{{$question->q_text}}</p>
-            <p>{{$question->create_at}}</p>
-        </div>
-        </a>
-    @endforeach
+    <div id="questions">
+        
+    </div>
+    <div id="loader" class="lds-dual-ring hidden overlay"></div>
+    @include('components/footer')
 </body>
 </html>

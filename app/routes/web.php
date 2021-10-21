@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\courseController;
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\questionController;
+
     use App\Http\Controllers\loginController;
     use Illuminate\Support\Facades\Route;
     use Laravel\Socialite\Facades\Socialite;
@@ -26,7 +28,13 @@ Route::get('/logout', function(){
    return redirect('/');
 });
 
+Route::get('/questions/user/{id}', [questionController::class, 'yourQuestions']);
+
 Route::get('/{course}', [courseController::class, 'firstPage'])->where('course', '[A-z]+');
+
+Route::post('/{course}/upload', [courseController::class, 'upload']);
+
+Route::post('/{course}/getAll', [courseController::class, 'ajax_getAll']);
 
 Route::get('/{course}/{id}', [courseController::class, 'oneQuestion'])->where('id', '[0-9]+');
 

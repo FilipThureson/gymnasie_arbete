@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Session;
 use App\Models\Course;
 use App\Models\Questions;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 
 class courseController extends Controller
 {
@@ -15,12 +15,11 @@ class courseController extends Controller
             return redirect('/');
         }
         $course = Course::get($course_pk);
-        $all_questions = Questions::get($course_pk);
         if(!$course){
             abort(404);
         }
         $course = $course[0];
-        return view('course', ['course' => $course, 'all_questions' => $all_questions]);
+        return view('course', ['course' => $course]);
     }
     //RETURNS ONE QUESTON IF THE $id equals a questions in a $course
     public static function oneQuestion($course, $id){
@@ -33,4 +32,23 @@ class courseController extends Controller
         }
         return var_dump($questions);
     }
+
+    public static function ajax_getAll($course_pk){
+        $all_questions = Questions::get($course_pk);
+        
+        return json_encode($all_questions);
+    }
+    
+    public static function upload($course_pk){
+        $data = [
+            'course' => $course_pk,
+            'user_fk' => filter_var(request::post('user_fk'), FILTER_SANITIZE_SPECIAL_CHARS),
+            'title' => filter_var(request::post('title'), FILTER_SANITIZE_SPECIAL_CHARS),
+            'q_text' => filter_var(request::post('q_text'), FILTER_SANITIZE_SPECIAL_CHARS)
+        ];
+
+        $test = Questions::upload((object)$data);
+        return $test;
+    }
+    
 }

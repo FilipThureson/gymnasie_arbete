@@ -1,16 +1,28 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    @include('components/head')
+  </head>
+  <body>
+
     @include('components/nav')
-    @foreach($courses as $course)
-        <a href="{{$course->course_pk}}">{{$course->course_pk}}</a>
-    @endforeach
-</body>
+
+    <main>
+      <h1>Kurser</h1>
+      <div id="wrapper">
+
+        @foreach ($courses as $course)
+        
+        <div class="question">
+            <h2>{{ $course->course_pk }}</h2>
+            <div><p>0</p></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <a href="{{$course->course_pk}}">Gå till frågor</a>
+        </div>
+          
+        @endforeach
+      </div>
+    </main>
+    @include('components/footer')
+  </body>
 </html>
