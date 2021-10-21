@@ -13,7 +13,7 @@ class questionController extends Controller
             return redirect('/');
         }
         if($id != Session::get('email')){
-            abort(401);
+            abort(403);
         }
         $questions = Questions::get_your($id);
         $course = [
