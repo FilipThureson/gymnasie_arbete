@@ -22,18 +22,16 @@ function loadQuestions(){
 $('#upload_form').submit(function(e){
 
     var course = $('#course').val();
-    var user_fk = $('#user_fk').val();
-    var title = $('#title').val();
-    var q_text = $('#q_text').val();
     
     var form_data = {
-        course : $('#course').val(),
+        course : course,
         user_fk : $('#user_fk').val(),
         title : $('#title').val(),
         q_text : $('#q_text').val()
     };
 
     e.preventDefault();
+    
     $.ajax({
         type: 'post',
         headers: {
@@ -47,12 +45,6 @@ $('#upload_form').submit(function(e){
     })
     
 });
-
-
-$(document).ready(function(){
-    loadQuestions();
-});
-
 
 function renderQuestions(data){
     if(data.length >0){
@@ -79,7 +71,7 @@ function renderQuestions(data){
             }
 
             $("#questions").append(`
-                <a style="text-decoration: none; color: #1a202c" href="/${question.course_fk}/${question.q_pk}">
+                <a style="text-decoration: none; color: #1a202c" href="/questions/${question.q_pk}">
                 <div style="border-bottom: 1px solid #4a5568">
                     <h4>${question.title}</h4>
                     <p> ${question.name}</p>
@@ -96,3 +88,8 @@ function renderQuestions(data){
         
     }
 }
+
+
+$(document).ready(function(){
+    loadQuestions();
+});

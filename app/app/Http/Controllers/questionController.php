@@ -22,4 +22,10 @@ class questionController extends Controller
 
         return view('your_q', ['course' => (object) $course, 'all_questions' => $questions]);
     }
+
+    public static function getOne($id){
+        $question = Questions::get_one($id);
+        
+        return json_encode($question);
+    }
 }

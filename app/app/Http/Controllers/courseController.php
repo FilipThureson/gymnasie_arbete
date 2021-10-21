@@ -22,15 +22,15 @@ class courseController extends Controller
         return view('course', ['course' => $course]);
     }
     //RETURNS ONE QUESTON IF THE $id equals a questions in a $course
-    public static function oneQuestion($course, $id){
+    public static function oneQuestion($id){
         if(Session::get('google_token') == null){
             return redirect('/');
         }
-        $questions = Questions::get_one($course, $id);
+        $questions = Questions::get_one($id);
         if($questions == null){
             abort(404);
         }
-        return var_dump($questions);
+        return view('singleQuestion');
     }
 
     public static function ajax_getAll($course_pk){
