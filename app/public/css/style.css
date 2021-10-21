@@ -199,8 +199,8 @@ main h1 {
     height: 64px;
     margin: 5% auto;
     border-radius: 50%;
-    border: 6px solid #fff;
-    border-color: #fff transparent #fff transparent;
+    border: 6px solid var(--text_color);
+    border-color: var(--text_color) transparent var(--text_color) transparent;
     animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {

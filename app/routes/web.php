@@ -36,7 +36,9 @@ Route::post('/{course}/upload', [courseController::class, 'upload']);
 
 Route::post('/{course}/getAll', [courseController::class, 'ajax_getAll']);
 
-Route::get('/{course}/{id}', [courseController::class, 'oneQuestion'])->where('id', '[0-9]+');
+Route::post('/questions/{id}/getOne', [questionController::class,'getOne']);
+
+Route::get('/questions/{id}', [courseController::class, 'oneQuestion'])->where('id', '[0-9]+');
 
 
 //LOGIN ROUTES

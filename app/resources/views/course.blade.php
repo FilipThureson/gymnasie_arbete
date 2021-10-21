@@ -29,5 +29,6 @@
     </div>
     <div id="loader" class="lds-dual-ring hidden overlay"></div>
     @include('components/footer')
+    <script src="{{ asset('js/ajax-course.js') }}" defer></script>
 </body>
 </html>
