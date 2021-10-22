@@ -6,7 +6,7 @@ function loadQuestions(){
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        url: `${pathname}/getAll/`,
+        url: `${pathname}/getAll`,
         beforeSend: function () { 
             $('#loader').removeClass('hidden')
         },   
