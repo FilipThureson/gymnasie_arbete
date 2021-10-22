@@ -12,9 +12,9 @@
         
     
     <div class="wrapper" id="fixedWrapper">
-        <h1 id="course_title">{{$course->course_pk}}</h1>
         <div id="loader" class="lds-dual-ring"></div>
         <main>
+          <h1>{{$course->course_pk}}</h1>
           
   
         </main>

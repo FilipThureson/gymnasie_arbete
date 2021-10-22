@@ -54,7 +54,7 @@ $('#upload_btn').on('click',function(e){
 
 function renderQuestions(data){
     if(data.length >0){
-        $("main").html("");
+        $("main").html(`<h1>${pathname.substring(1)}</h1>`);
         data.forEach(question => {
             var dateNow = new Date();
             var dateUpload =new Date(question.create_at);
