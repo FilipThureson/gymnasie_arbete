@@ -1,0 +1,231 @@
+:root {
+    --body_bg_color: #181d26;
+    --header_bg_color: #323d54;
+    --q_bg_color: #1a202c;
+    --link_color: #23e8fa;
+    --shadow: 0px 0px 20px 2px black;
+    --text_color: #e3e3e3;
+}
+
+*,
+*::after,
+*::before {
+    color: var(--text_color);
+    font-family: "Poppins", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+p {
+    padding: 15px;
+}
+h1 {
+    padding: 20px;
+}
+h2 {
+    font-size: 1.3rem;
+    font-weight: 200;
+    padding: 20px;
+    color: #1e90ff;
+}
+h3 {
+    display: inline;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 15px;
+}
+body {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--body_bg_color);
+    overflow: hidden;
+}
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+/*SCROLLBAR*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(30, 144, 255, 0.3);
+}
+::-webkit-scrollbar-track {
+    background: linear-gradient(#5e6982 0%, #323d54 50%, #5e6982 100%);
+    background: var(--header_bg_color);
+}
+
+/* WRAPPER */
+#fixedWrapper {
+    position: fixed;
+    top: 75px;
+}
+#course_title {
+    position: absolute;
+    margin-left: 30px;
+}
+/* MAIN */
+main {
+    position: static;
+    padding-top: 75px;
+    height: 100vh;
+    width: 90%;
+    padding-left: 50px;
+    overflow-y: scroll;
+}
+main h1 {
+    text-align: center;
+}
+.question {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid var(--text_color);
+}
+.question span {
+    position: absolute;
+    right: 5%;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+.question div {
+    display: inline;
+    padding: 10px;
+    background-color: #fff4;
+    border-radius: 2em;
+    transition: 0.3s;
+}
+.question div:hover {
+    color: #1e90ff;
+    background-color: #fff2;
+}
+.question a {
+    color: var(--link_color);
+}
+.question a:hover {
+    text-decoration: underline;
+}
+.link_to_question {
+    margin-left: 10px;
+}
+#q_text {
+    text-align: left;
+}
+
+/* ASIDE */
+aside {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 10%;
+    height: 100%;
+    text-align: center;
+    border-left: 1px solid var(--text_color);
+}
+#aside_btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 37.5px));
+    height: 25px;
+    width: auto;
+    transition: 0.3s;
+}
+#aside_btn:hover {
+    cursor: pointer;
+    fill: var(--link_color);
+}
+
+aside h2 {
+    margin-top: 95px;
+}
+::placeholder {
+    color: var(--text_color);
+}
+
+#slide {
+    position: absolute;
+    top: 75px;
+    height: 100%;
+    width: 100%;
+    background-color: var(--body_bg_color);
+    left: 100%;
+    transition: 0.5s;
+    text-align: center;
+}
+#slide > div {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+#slide button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+}
+#slide .svg_icon {
+    width: 20px;
+    height: auto;
+    margin: 20px;
+    transition: 0.5s;
+}
+#slide .svg_icon:hover {
+    cursor: pointer;
+    fill: var(--link_color);
+}
+#slide input {
+    text-align: center;
+    background-color: var(--q_bg_color);
+    border: 1px solid var(--text_color);
+    width: 40%;
+    font-size: 1rem;
+    margin: 5px;
+    padding: 15px;
+}
+#slide textarea {
+    resize: none;
+    background-color: transparent;
+}
+
+/* LOADER AJAX CRED---- https://www.codewall.co.uk/add-jquery-ajax-loading-spinners-to-your-website/ */
+
+/*Hidden class for adding and removing*/
+.lds-dual-ring.hidden {
+    display: none;
+}
+/*Spinner Styles*/
+.lds-dual-ring {
+    display: inline-block;
+    position: fixed;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+}
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 5% auto;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

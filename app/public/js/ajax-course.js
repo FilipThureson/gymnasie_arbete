@@ -19,36 +19,42 @@ function loadQuestions(){
     })
 }
 
-$('#upload_form').submit(function(e){
-
-    var course = $('#course').val();
+$('#upload_btn').on('click',function(e){
     
-    var form_data = {
+    var course = $('#course').val();
+    $("main").html("");
+
+    form_data = {
         course : course,
         user_fk : $('#user_fk').val(),
         title : $('#title').val(),
-        q_text : $('#q_text').val()
+        q_text : tinyMCE.activeEditor.getContent({format : 'raw'})
     };
 
-    e.preventDefault();
-    
-    $.ajax({
-        type: 'post',
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-        url: `/${course}/upload`,
-        data: form_data,
-        success: function (data){
-            loadQuestions();
-        }
-    })
-    
+    if(form_data.q_text == ""){
+        alert("Du måste ha en fråga");
+    }else if(form_data.title == ""){
+        alert("Du måste ha en titel");
+    }else{
+        $.ajax({
+            type: 'post',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: `/${course}/upload`,
+            data: form_data,
+            success: function (data){
+                loadQuestions();
+            }
+        })
+        close_slide()
+    }
+ 
 });
 
 function renderQuestions(data){
     if(data.length >0){
-        $("#questions").html("");
+        $("main").html("");
         data.forEach(question => {
             var dateNow = new Date();
             var dateUpload =new Date(question.create_at);
@@ -58,33 +64,45 @@ function renderQuestions(data){
             seconds = difference/(1000)
             if(seconds > 60 && seconds < 3600){
                 seconds =Math.floor(seconds/60);
-                seconds += " Minuter Sedan"
+                if(seconds = 1){
+                    seconds += " Minut Sedan"
+                }else{
+                    seconds += " Minuter Sedan"
+                }
             }else if(seconds > 3600 && seconds <(3600*24)){
                 seconds =Math.floor((seconds/60)/60);
-                seconds += " Timmar Sedan"
+                if(seconds = 1){
+                    seconds += " Timme Sedan"
+                }else{
+                    seconds += " Timmar Sedan"
+                }
             }else if(seconds > (3600*24)){
                 seconds =Math.floor(((seconds/60)/60)/24);
-                seconds += " Dagar Sedan"
+                if(seconds = 1){
+                    seconds += " Dag Sedan"
+                }else{
+                    seconds += " Dagar Sedan"
+                }
             }else{
                 seconds=  Math.floor(seconds);
                 seconds += " Sekunder Sedan"
             }
 
-            $("#questions").append(`
-                <a style="text-decoration: none; color: #1a202c" href="/questions/${question.q_pk}">
-                <div style="border-bottom: 1px solid #4a5568">
-                    <h4>${question.title}</h4>
-                    <p> ${question.name}</p>
+            $("main").append(`
+                <div class="question">
+                    <br>
+                    <h3>${question.title}</h3><span>${seconds}, av <a href="#">@${question.name}</a></span>
                     <p>${question.q_text}</p>
-                    <p>${seconds}</p>
+                    <a class="link_to_question" href="/questions/${question.q_pk}">Öppna Frågan</a>
+                    <br>
+                    <br>
                 </div>
-                </a>
             `)
             
-            
+        
         });
     }else{
-        $("#questions").html("<h5>Oooops Här fanns det inga frågor! Publicera den första!</h5>");
+        $("main").html("<p>Oooops Här fanns det inga frågor! Publicera den första!</p>");
         
     }
 }
@@ -93,3 +111,17 @@ function renderQuestions(data){
 $(document).ready(function(){
     loadQuestions();
 });
+
+//OPEN SLIDE
+document.getElementById("aside_btn").addEventListener("click", function(){
+    document.getElementById("slide").style.left=0;
+});
+
+//CLOSE SLIDE
+document.getElementById("close_slide").addEventListener("click", function(){
+    document.getElementById("slide").style.left="100%";
+});
+
+function close_slide(){
+    document.getElementById("slide").style.left="100%";
+}

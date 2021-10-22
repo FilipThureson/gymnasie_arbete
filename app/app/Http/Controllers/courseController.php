@@ -44,7 +44,7 @@ class courseController extends Controller
             'course' => $course_pk,
             'user_fk' => filter_var(request::post('user_fk'), FILTER_SANITIZE_SPECIAL_CHARS),
             'title' => filter_var(request::post('title'), FILTER_SANITIZE_SPECIAL_CHARS),
-            'q_text' => filter_var(request::post('q_text'), FILTER_SANITIZE_SPECIAL_CHARS)
+            'q_text' => request::post('q_text')
         ];
 
         $test = Questions::upload((object)$data);
