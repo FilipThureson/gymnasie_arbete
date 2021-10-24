@@ -67,7 +67,6 @@
                 server : 'php'
               }
             },
-            plugins: "tiny_mce_wiris"
         });
     </script>
 </body>
