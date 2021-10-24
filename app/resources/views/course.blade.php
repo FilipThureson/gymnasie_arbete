@@ -60,7 +60,7 @@
             selector: '#q_text',
             menubar: false,
             resize: false,
-            toolbar: 'undo redo bold italic underline',
+            toolbar: 'undo redo bold italic underline tiny_mce_wiris_formulaEditor',
             mathTypeParameters : {
               serviceProviderProperties : {
                 URI : 'http://localhost/php-services/integration',
