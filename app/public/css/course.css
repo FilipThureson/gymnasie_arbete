@@ -67,7 +67,7 @@ body {
 /* MAIN */
 main {
     position: absolute;
-    height: 100vh;
+    height: calc(100vh - 150px);
     width: 90%;
     padding-left: 50px;
     overflow-y: scroll;

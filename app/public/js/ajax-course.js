@@ -102,7 +102,7 @@ function renderQuestions(data){
         
         });
     }else{
-        $("main").html("<p>Oooops Här fanns det inga frågor! Publicera den första!</p>");
+        $("main").html(`<h1>${pathname.substring(1)}</h1><p>Oooops Här fanns det inga frågor! Publicera den första!</p>`);
         
     }
 }

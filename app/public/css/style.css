@@ -105,7 +105,17 @@ header ul li a:hover::before {
     transition: 0.3s;
 }
 #icon:hover {
-    /*box-shadow: 0 0 5px 3px #000;*/
+    box-shadow: 0 0 5px 3px #000;
+}
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 75px;
+    background-color: var(--header_bg_color);
 }
 ::-webkit-scrollbar {
     width: 10px;
