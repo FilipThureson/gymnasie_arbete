@@ -58,6 +58,7 @@
     <script>
         tinymce.init({
             selector: '#q_text',
+            plugins: "tiny_mce_wiris",
             menubar: false,
             resize: false,
             toolbar: 'undo redo bold italic underline tiny_mce_wiris_formulaEditor',
