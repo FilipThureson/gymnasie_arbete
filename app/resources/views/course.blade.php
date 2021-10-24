@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-    @include('components/head')
+    <x-head.head/>
     <link rel="stylesheet" href="{{ asset('css/course.css') }}">
-    <script src="https://cdn.tiny.cloud/1/fsua0ssfdpv74dcehnti9bto8m8q0u2ddzpc5c71y2cihi5k/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script src="http://localhost/php-services/integration/WIRISplugins.js?viewer=image"></script>
 </head>
 <body>
 
@@ -55,20 +53,7 @@
     
     @include('components/footer')
     <script src="{{ asset('js/ajax-course.js') }}" defer></script>
-    <script>
-        tinymce.init({
-            selector: '#q_text',
-            plugins: "tiny_mce_wiris",
-            menubar: false,
-            resize: false,
-            toolbar: 'undo redo bold italic underline tiny_mce_wiris_formulaEditor',
-            mathTypeParameters : {
-              serviceProviderProperties : {
-                URI : 'http://localhost/php-services/integration',
-                server : 'php'
-              }
-            },
-        });
-    </script>
+
+    <x-head.tinymce-config/>
 </body>
 </html>

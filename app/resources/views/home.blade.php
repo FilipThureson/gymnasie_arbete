@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    @include('components/head')
+    <x-head.head/>
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
   </head>
   <body>

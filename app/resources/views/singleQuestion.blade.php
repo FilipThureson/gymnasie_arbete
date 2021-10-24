@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    @include('components/head')
+    <x-head.head/>
     <style>
         main{
             width: 100%;

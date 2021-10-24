@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    @include('components/head')
+    <x-head.head/>
     <style>
         #upload form button{
             color: black;
