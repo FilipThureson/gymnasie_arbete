@@ -60,7 +60,6 @@
             selector: '#q_text',
             menubar: false,
             resize: false,
-            theme: 'modern',
             toolbar: 'undo redo bold italic underline tiny_mce_wiris_formulaEditor',
             mathTypeParameters : {
               serviceProviderProperties : {
