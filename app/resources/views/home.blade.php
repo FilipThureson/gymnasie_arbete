@@ -22,8 +22,8 @@
         </div>
           
         @endforeach
+        @include('components/footer')
       </div>
-      @include('components/footer')
     </main>
   </body>
 </html>
