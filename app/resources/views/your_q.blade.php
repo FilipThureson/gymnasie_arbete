@@ -2,12 +2,6 @@
 <html lang="en">
 <head>
     <x-head.head/>
-    <style>
-        #upload form button{
-            color: black;
-            font-size: large
-        }
-    </style>
 </head>
 <body>
 
