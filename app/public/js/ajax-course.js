@@ -68,21 +68,21 @@ function renderQuestions(data){
             seconds = difference/(1000)
             if(seconds > 60 && seconds < 3600){
                 seconds =Math.floor(seconds/60);
-                if(seconds = 1){
+                if(seconds == 1){
                     seconds += " Minut Sedan"
                 }else{
                     seconds += " Minuter Sedan"
                 }
             }else if(seconds > 3600 && seconds <(3600*24)){
                 seconds =Math.floor((seconds/60)/60);
-                if(seconds = 1){
+                if(seconds == 1){
                     seconds += " Timme Sedan"
                 }else{
                     seconds += " Timmar Sedan"
                 }
             }else if(seconds > (3600*24)){
                 seconds =Math.floor(((seconds/60)/60)/24);
-                if(seconds = 1){
+                if(seconds == 1){
                     seconds += " Dag Sedan"
                 }else{
                     seconds += " Dagar Sedan"
