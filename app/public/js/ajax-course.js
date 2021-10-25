@@ -19,6 +19,10 @@ function loadQuestions(){
     })
 }
 
+$('#upload_form').submit(e=>{
+    e.preventDefault();
+});
+
 $('#upload_btn').on('click',function(e){
     
     var course = $('#course').val();
@@ -31,7 +35,7 @@ $('#upload_btn').on('click',function(e){
         q_text : tinyMCE.activeEditor.getContent({format : 'raw'})
     };
 
-    if(form_data.q_text == ""){
+    if(form_data.q_text == "<p><br data-mce-bogus=\"1\"></p>"){
         alert("Du måste ha en fråga");
     }else if(form_data.title == ""){
         alert("Du måste ha en titel");
