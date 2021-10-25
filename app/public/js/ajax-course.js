@@ -98,12 +98,10 @@ function renderQuestions(data){
                     <br>
                 </div>
             `)
-            
-        
+            MathJax.typeset();
         });
     }else{
         $("main").html(`<h1>${pathname.substring(1)}</h1><p>Oooops Här fanns det inga frågor! Publicera den första!</p>`);
-        
     }
 }
 
