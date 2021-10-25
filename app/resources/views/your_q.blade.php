@@ -20,5 +20,8 @@
         </a>
     @endforeach
     @include('components/footer')
+    <script>
+        MathJax.typeset();
+    </script>
 </body>
 </html>
