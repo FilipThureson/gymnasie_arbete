@@ -126,3 +126,6 @@ footer {
 ::-webkit-scrollbar-track {
     background: linear-gradient(#5e6982 0%, #323d54 50%, #5e6982 100%);
 }
+mjx-container.MathJax {
+    pointer-events: none;
+}
