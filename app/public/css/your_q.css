@@ -6,7 +6,6 @@
     --shadow: 0px 0px 20px 2px black;
     --text_color: #e3e3e3;
 }
-
 *,
 *::after,
 *::before {
@@ -16,6 +15,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+svg {
+    font-size: x-large;
+}
+
 main {
     width: 95%;
     margin-left: auto;
@@ -55,8 +59,4 @@ main {
 }
 #q_text {
     text-align: left;
-}
-
-.mjx-container {
-    font-size: x-large;
 }

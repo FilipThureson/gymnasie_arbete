@@ -16,6 +16,10 @@
     margin: 0;
     box-sizing: border-box;
 }
+svg {
+    font-size: x-large;
+}
+
 p {
     padding: 15px;
 }
@@ -226,8 +230,4 @@ aside h2 {
     100% {
         transform: rotate(360deg);
     }
-}
-
-.mjx-container {
-    font-size: x-large;
 }
