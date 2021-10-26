@@ -227,3 +227,7 @@ aside h2 {
         transform: rotate(360deg);
     }
 }
+
+mjx-container.MathJax.CtxtMenu_Attached_0 {
+    font-size: x-large;
+}

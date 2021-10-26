@@ -56,3 +56,7 @@ main {
 #q_text {
     text-align: left;
 }
+
+mjx-container.MathJax.CtxtMenu_Attached_0 {
+    font-size: x-large;
+}
