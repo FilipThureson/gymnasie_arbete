@@ -1,12 +1,16 @@
-const pathname = window.location.pathname;
+let pathname = window.location.pathname;
+
+let new_pathname = pathname.substring(16);
+
+console.log(new_pathname);
+
 function loadQuestions(){
-    
     $.ajax({
         type: 'post',
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        url: `${pathname}/getAll`,
+        url: `/getyour/${new_pathname}`,
         beforeSend: function () { 
             $('#loader').removeClass('hidden')
         },   
@@ -19,46 +23,9 @@ function loadQuestions(){
     })
 }
 
-$('#upload_form').submit(e=>{
-    e.preventDefault();
-});
-
-$('#upload_btn').on('click',function(e){
-    
-    var course = $('#course').val();
-    $("main").html("");
-
-    form_data = {
-        course : course,
-        user_fk : $('#user_fk').val(),
-        title : $('#title').val(),
-        q_text : tinyMCE.activeEditor.getContent({format : 'raw'})
-    };
-
-    if(form_data.q_text == "<p><br data-mce-bogus=\"1\"></p>"){
-        alert("Du måste ha en fråga");
-    }else if(form_data.title == ""){
-        alert("Du måste ha en titel");
-    }else{
-        $.ajax({
-            type: 'post',
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            url: `/${course}/upload`,
-            data: form_data,
-            success: function (data){
-                loadQuestions();
-            }
-        })
-        close_slide()
-    }
- 
-});
-
 function renderQuestions(data){
     if(data.length >0){
-        $("main").html(`<h1>${pathname.substring(1)}</h1>`);
+        $("main").html(`<h1>Dina Frågor</h1>`);
         data.forEach(question => {
             var dateNow = new Date();
             var dateUpload =new Date(question.create_at);
@@ -105,7 +72,7 @@ function renderQuestions(data){
             MathJax.typeset();
         });
     }else{
-        $("main").html(`<h1>${pathname.substring(1)}</h1><p>Oooops Här fanns det inga frågor! Publicera den första!</p>`);
+        $("main").html(`<h1>Dina Frågor</h1><p>Oooops Här fanns det inga frågor! Publicera den första!</p>`);
     }
 }
 
@@ -113,20 +80,3 @@ function renderQuestions(data){
 $(document).ready(function(){
     loadQuestions();
 });
-
-//OPEN SLIDE
-document.getElementById("aside_btn").addEventListener("click", function(){
-    document.getElementById("slide").style.left=0;
-    //document.getElementById("footer").style.display = "none";
-});
-
-//CLOSE SLIDE
-document.getElementById("close_slide").addEventListener("click", function(){
-    document.getElementById("slide").style.left="100%";
-    //document.getElementById("footer").style.display = "flex";
-
-});
-
-function close_slide(){
-    document.getElementById("slide").style.left="100%";
-}

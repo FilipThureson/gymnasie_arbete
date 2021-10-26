@@ -15,12 +15,14 @@ class questionController extends Controller
         if($id != Session::get('email')){
             abort(403);
         }
-        $questions = Questions::get_your($id);
-        $course = [
-            "course_pk" => "Dina Frågor"
-        ];
+        
 
-        return view('your_q', ['course' => (object) $course, 'all_questions' => $questions]);
+        return view('your_q');
+    }
+
+    public static function yourQuestions_ajax($id){
+        $questions = Questions::get_your($id);
+        return json_encode($questions);
     }
 
     public static function getOne($id){

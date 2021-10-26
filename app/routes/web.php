@@ -28,8 +28,6 @@ Route::get('/logout', function(){
    return redirect('/');
 });
 
-Route::get('/questions/user/{id}', [questionController::class, 'yourQuestions']);
-
 Route::get('/{course}', [courseController::class, 'firstPage'])->where('course', '[A-z]+');
 
 Route::post('/{course}/upload', [courseController::class, 'upload']);
@@ -39,6 +37,10 @@ Route::post('/{course}/getAll', [courseController::class, 'ajax_getAll']);
 Route::post('/questions/{id}/getOne', [questionController::class,'getOne']);
 
 Route::get('/questions/{id}', [courseController::class, 'oneQuestion'])->where('id', '[0-9]+');
+
+Route::get('/questions/user/{id}', [questionController::class, 'yourQuestions']);
+
+Route::post('/getyour/{id}', [questionController::class, 'yourQuestions_ajax']);
 
 
 //LOGIN ROUTES
