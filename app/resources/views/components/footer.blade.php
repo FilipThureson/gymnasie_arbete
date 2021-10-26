@@ -1,4 +1,4 @@
-<footer>
+<footer id="footer">
     <p>Email: auxiliumgymnasiearbete@gmail.com</p>
     <p>Location: Idrottsgatan 3, 462 36 Vänersborg</p>
 </footer>

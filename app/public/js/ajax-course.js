@@ -117,11 +117,14 @@ $(document).ready(function(){
 //OPEN SLIDE
 document.getElementById("aside_btn").addEventListener("click", function(){
     document.getElementById("slide").style.left=0;
+    document.getElementById("footer").style.display = "none";
 });
 
 //CLOSE SLIDE
 document.getElementById("close_slide").addEventListener("click", function(){
     document.getElementById("slide").style.left="100%";
+    document.getElementById("footer").style.display = "flex";
+
 });
 
 function close_slide(){
