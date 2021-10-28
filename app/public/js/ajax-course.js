@@ -51,9 +51,9 @@ $('#upload_btn').on('click',function(e){
                 loadQuestions();
             }
         })
-        close_slide()
+        close_slide();
+        socket.emit('update', socket_pathname);
     }
- 
 });
 
 function renderQuestions(data){
@@ -130,3 +130,8 @@ document.getElementById("close_slide").addEventListener("click", function(){
 function close_slide(){
     document.getElementById("slide").style.left="100%";
 }
+
+socket.on('update', (data)=>{
+    console.log(data);
+    loadQuestions();
+})

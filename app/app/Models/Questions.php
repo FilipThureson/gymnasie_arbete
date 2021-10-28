@@ -17,6 +17,5 @@ class Questions
     }
     public static function upload($data){
         return DB::insert("INSERT INTO `questions` (`user_fk`, `title`, `q_text`, `course_fk`) VALUES ('{$data->user_fk}', '{$data->title}', '{$data->q_text}', '{$data->course}')");
-    }
-    
+    }    
 }
