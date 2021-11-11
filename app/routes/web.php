@@ -42,7 +42,7 @@ Route::get('/questions/user/{id}', [questionController::class, 'yourQuestions'])
 
 Route::post('/getyour/{id}', [questionController::class, 'yourQuestions_ajax']);
 
-Route::get('/get/answsers/{parentid}' , [questionController::class, 'getAnswers']);
+Route::post('/questions/{parentid}/ajax' , [questionController::class, 'getAnswers']);
 
 //LOGIN ROUTES
 

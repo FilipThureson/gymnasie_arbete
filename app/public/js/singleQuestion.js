@@ -6,11 +6,13 @@ function loadQuestions(){
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        url: `${pathname}/getOne/`,  
+        url: `/questions/1/ajax`,  
         success: function (data){
-            console.log(data);
+            var data_obj = JSON.parse(data);
+            console.log(data_obj);
         }
-    })
+    }, "json")
+    
 }
 
 $(document).ready(function(){
