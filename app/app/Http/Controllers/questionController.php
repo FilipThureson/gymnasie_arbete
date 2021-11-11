@@ -30,4 +30,9 @@ class questionController extends Controller
         
         return json_encode($question);
     }
+    public static function getAnswers($parentId){
+        $answers = Questions::get_answers($parentId);
+        
+        return print_r($answers);
+    }
 }

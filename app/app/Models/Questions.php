@@ -18,4 +18,8 @@ class Questions
     public static function upload($data){
         return DB::insert("INSERT INTO `questions` (`user_fk`, `title`, `q_text`, `course_fk`) VALUES ('{$data->user_fk}', '{$data->title}', '{$data->q_text}', '{$data->course}')");
     }    
+    public static function get_answers($parent_id){
+        //return DB::select("SELECT * FROM posts where`post_fk` = {$parent_id}");
+        return DB::select("Select * from posts, users WHERE email_pk = user_fk and (post_fk = {$parent_id} or post_pk = {$parent_id})");
+    }
 }

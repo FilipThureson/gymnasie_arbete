@@ -195,39 +195,3 @@ aside h2 {
     resize: none;
     background-color: transparent;
 }
-
-/* LOADER AJAX CRED---- https://www.codewall.co.uk/add-jquery-ajax-loading-spinners-to-your-website/ */
-
-/*Hidden class for adding and removing*/
-.lds-dual-ring.hidden {
-    display: none;
-}
-/*Spinner Styles*/
-.lds-dual-ring {
-    display: inline-block;
-    position: fixed;
-    top: 50%;
-    left: 45%;
-    transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-}
-.lds-dual-ring:after {
-    content: " ";
-    display: block;
-    width: 64px;
-    height: 64px;
-    margin: 5% auto;
-    border-radius: 50%;
-    border: 6px solid #fff;
-    border-color: #fff transparent #fff transparent;
-    animation: lds-dual-ring 1.2s linear infinite;
-}
-@keyframes lds-dual-ring {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}

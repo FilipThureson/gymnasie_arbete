@@ -6,16 +6,10 @@ function loadQuestions(){
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        url: `${pathname}/getAll`,
-        beforeSend: function () { 
-            $('#loader').removeClass('hidden')
-        },   
+        url: `${pathname}/getAll`,  
         success: function (data){
             renderQuestions(JSON.parse(data));
-        },
-        complete: function () {
-            $('#loader').addClass('hidden')
-        },
+        }
     })
 }
 
@@ -133,5 +127,7 @@ function close_slide(){
 
 socket.on('update', (data)=>{
     console.log(data);
-    loadQuestions();
+    setTimeout(()=>{
+        loadQuestions();
+    },1000);
 })

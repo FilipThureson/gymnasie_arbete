@@ -11,7 +11,6 @@
         
     
     <div class="wrapper" id="fixedWrapper">
-        <div id="loader" class="lds-dual-ring"></div>
         <main>
           <h1>{{$course->course_pk}}</h1>
           
