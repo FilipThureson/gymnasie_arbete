@@ -15,8 +15,6 @@ class questionController extends Controller
         if($id != Session::get('email')){
             abort(403);
         }
-        
-
         return view('your_q');
     }
 
