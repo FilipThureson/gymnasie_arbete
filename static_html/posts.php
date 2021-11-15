@@ -11,10 +11,7 @@ $arr = $stmt->fetchAll();       //Sortera arrayen? Gör en annan ordning då det
 //                  Väljer fråga och startar rekutionen utöver den
 
 if (isset($_REQUEST['test'])){
-
     start_post(1);
-
-
 }
 
 
@@ -27,7 +24,9 @@ function start_post($start_pk){
             $parent = $post;
         }
     }
-    post($parent, 1);
+    if(isset($parent)){
+        post($parent, 1);
+    }
 }
 
 
@@ -66,8 +65,6 @@ function calc_children($parent){
 
 //                  HTML!
 function start_div($parent, $classname){
-
-
 
     $amountOfChildren = count(calc_children($parent));
     $display = "display: block";

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
 use App\Models\Questions;
 use Illuminate\Support\Facades\Session;
 
@@ -30,6 +30,21 @@ class questionController extends Controller
     }
     public static function getAnswers($parentId){
         $answers = Questions::get_answers($parentId);
+        return json_encode($answers);
+    }
+    public function uploadAnswer($parentId){
+
+        $data = [
+            'post_fk' =>filter_var(request::post('post_fk'), FILTER_SANITIZE_SPECIAL_CHARS),
+            'user_fk' => filter_var(request::post('user_fk'), FILTER_SANITIZE_SPECIAL_CHARS),
+            'post_text' => request::post('post_text')
+        ];
+
+    
+        Questions::upload_answers((object)$data);
+
+        $answers = Questions::get_answers($parentId);
+
         return json_encode($answers);
     }
 }

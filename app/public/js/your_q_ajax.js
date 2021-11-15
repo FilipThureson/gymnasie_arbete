@@ -62,9 +62,9 @@ function renderQuestions(data){
             $("main").append(`
                 <div class="question">
                     <br>
-                    <h3>${question.title}</h3><span>${seconds}, av <a href="#">@${question.name}</a></span>
-                    <p>${question.q_text}</p>
-                    <a class="link_to_question" href="/questions/${question.q_pk}">Öppna Frågan</a>
+                    <h3>${question.post_rubrik}</h3><span>${seconds}, av <a href="#">@${question.name}</a></span>
+                    <p>${question.post_text}</p>
+                    <a class="link_to_question" href="/questions/${question.post_pk}">Öppna Frågan</a>
                     <br>
                     <br>
                 </div>

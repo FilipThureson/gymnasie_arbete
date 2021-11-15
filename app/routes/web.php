@@ -44,6 +44,9 @@ Route::post('/getyour/{id}', [questionController::class, 'yourQuestions_ajax']);
 
 Route::post('/questions/{parentid}/ajax' , [questionController::class, 'getAnswers']);
 
+Route::post('/questions/{parentid}/upload' , [questionController::class, 'uploadAnswer']);
+
+
 //LOGIN ROUTES
 
 Route::get('/auth/redirect', [loginController::class, 'redirect']);
