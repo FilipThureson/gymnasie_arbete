@@ -46,6 +46,7 @@ Route::post('/questions/{parentid}/ajax' , [questionController::class, 'getAnswe
 
 Route::post('/questions/{parentid}/upload' , [questionController::class, 'uploadAnswer']);
 
+Route::post('/questions/like/{id}', [questionController::class, 'likeAnswer']);
 
 //LOGIN ROUTES
 

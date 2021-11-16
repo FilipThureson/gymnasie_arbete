@@ -25,8 +25,13 @@ class Questions
 
     public static function get_answers($parent_id){
         
-        return DB::select("select * from (select * from posts order by post_fk, post_pk) posts, (select @pv := '{$parent_id}') initialisation where find_in_set(post_pk, @pv) or find_in_set(post_fk, @pv) > 0 and @pv := concat(@pv, ',', post_pk)");
+        return DB::select("select * from (select * from posts, users where email_pk=user_fk order by post_fk, post_pk) posts, (select @pv := '{$parent_id}') initialisation where find_in_set(post_pk, @pv) or find_in_set(post_fk, @pv) > 0 and @pv := concat(@pv, ',', post_pk)");
 
         //return DB::select("select * from posts, users WHERE email_pk = user_fk and (post_fk = {$parent_id} or post_pk = {$parent_id})");
+    }
+
+    public static function like($id){
+        DB::update("update posts set upvotes = upvotes + 1 where post_pk = $id");
+        return DB::select("select upvotes from posts WHERE post_pk = '{$id}'");
     }
 }

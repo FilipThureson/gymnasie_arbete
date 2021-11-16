@@ -47,4 +47,7 @@ class questionController extends Controller
 
         return json_encode($answers);
     }
+    public static function likeAnswer($id){
+        return Questions::like($id);
+    }
 }

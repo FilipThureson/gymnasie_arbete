@@ -34,6 +34,20 @@
         });
       });
 
+      $("main").delegate(".bi-hand-thumbs-up", "click", function() {
+        let id = this.id.substr(4);
+        console.log(id);
+        $.ajax({
+          type: 'post',
+          headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          },
+          url: `like/${id}`,
+          success: function(data){
+            loadQuestions();
+          }
+        });
+      });
 
 
                           //SLIDER
