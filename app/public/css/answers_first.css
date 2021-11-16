@@ -1,71 +1,71 @@
-:root{
+:root {
     --body_bg_color: #181d26;
-    --header_bg_color: #323D54;
-    --q_bg_color: #1A202C;
-    --link_color: #23E8FA;
+    --header_bg_color: #323d54;
+    --q_bg_color: #1a202c;
+    --link_color: #23e8fa;
     --shadow: 0px 0px 20px 2px black;
-    --text_color: #E3E3E3;
-  }
-  
-  *, *::after, *::before{
+    --text_color: #e3e3e3;
+}
+
+*,
+*::after,
+*::before {
     color: var(--text_color);
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-  }
-  p{
+}
+p {
     padding: 15px;
-  }
-  a{
+}
+a {
     text-decoration: none;
     color: var(--link_color);
-  }
-  a:hover{
+}
+a:hover {
     text-decoration: underline;
-  }
-  h1{
+}
+h1 {
     padding: 20px;
-  }
-  h2{
+}
+h2 {
     font-size: 1.3rem;
     font-weight: 200;
     padding: 20px;
-    color: #1E90FF;
-  }
-  h3{
-    display:inline;
+    color: #1e90ff;
+}
+h3 {
+    display: inline;
     font-size: 1.3rem;
     font-weight: bold;
     padding: 15px;
-  }
-  body{
+}
+body {
     position: relative;
     height: 100vh;
     width: 100%;
     background-color: var(--body_bg_color);
     overflow: hidden;
-  }
-  .wrapper{
+}
+.wrapper {
     display: flex;
-  }
-  
-  /*SCROLLBAR*/
-  ::-webkit-scrollbar{
+}
+
+/*SCROLLBAR*/
+::-webkit-scrollbar {
     width: 10px;
-  }
-  ::-webkit-scrollbar-thumb{
+}
+::-webkit-scrollbar-thumb {
     background: rgba(30, 144, 255, 0.3);
-  }
-  ::-webkit-scrollbar-track{
-    background: linear-gradient(#5e6982 0%, #323D54 50%, #5e6982 100%);
+}
+::-webkit-scrollbar-track {
+    background: linear-gradient(#5e6982 0%, #323d54 50%, #5e6982 100%);
     background: var(--header_bg_color);
-  }
-  
-  
-  
-  /* HEADER */
-  header{
+}
+
+/* HEADER */
+header {
     position: fixed;
     height: 75px;
     width: 100%;
@@ -73,66 +73,64 @@
     box-shadow: var(--shadow);
     margin-bottom: 20px;
     z-index: 2;
-  }
-  header > a img{
+}
+header > a img {
     height: 50px;
     width: auto;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     left: 20%;
-  }
-  header ul{
+}
+header ul {
     position: absolute;
     width: 50%;
     height: 100%;
     left: 50%;
-  
+
     display: flex;
     justify-content: space-around;
     align-items: center;
-  
+
     list-style: none;
-  }
-  header ul a{
+}
+header ul a {
     position: relative;
     color: var(--text_color);
     text-decoration: none;
-  }
-  header ul a:hover{
+}
+header ul a:hover {
     text-decoration: none;
-  }
-  header ul li a::before{
+}
+header ul li a::before {
     content: "";
     position: absolute;
     background-color: var(--text_color);
-    height: .07rem;
+    height: 0.07rem;
     width: 0;
     left: 50%;
     bottom: 0px;
-    transition: .3s;
-  }
-  header ul li a:hover::before{
+    transition: 0.3s;
+}
+header ul li a:hover::before {
     width: 100%;
     left: 0;
-  }
-  #icon{
+}
+#icon {
     border-radius: 50%;
     height: 55px;
     box-shadow: 0 0 5px 1px #000;
-    transition: .3s;
-  }
-  
-  
-  /* WRAPPER */
-  #fixedWrapper{
-    position: fixed;                /*ÄNDRING!!!!*/
+    transition: 0.3s;
+}
+
+/* WRAPPER */
+#fixedWrapper {
+    position: fixed; /*ÄNDRING!!!!*/
     width: 100%;
-  }
-  
-  
-  /* MAIN */
-  main{
+}
+
+/* MAIN */
+main {
     position: static;
     padding-top: 75px;
     height: 100vh;
@@ -140,48 +138,47 @@
     padding-right: 5%;
     padding-left: 5%;
     overflow-y: scroll;
-  }
-  main h1{
+}
+main h1 {
     text-align: center;
-  }
-  ::placeholder{
+}
+::placeholder {
     color: var(--text_color);
-  }
-  
-  
-  #slide{
+}
+
+#slide {
     position: absolute;
     top: 75px;
     height: calc(100% - 75px);
     width: 60%;
     background-color: var(--body_bg_color);
-    left:100%;
-    transition: .5s;
+    left: 100%;
+    transition: 0.5s;
     text-align: center;
-  }
-  #slide > div{
+}
+#slide > div {
     display: flex;
     width: 100%;
     height: 100px;
     justify-content: space-between;
     align-items: center;
-  }
-  #slide button{
+}
+#slide button {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  #slide .svg_icon{
+}
+#slide .svg_icon {
     width: 20px;
     height: auto;
     margin: 20px;
-    transition: .5s;
-  }
-  #slide .svg_icon:hover{
+    transition: 0.5s;
+}
+#slide .svg_icon:hover {
     cursor: pointer;
     fill: var(--link_color);
-  }
-  #slide input{
+}
+#slide input {
     text-align: center;
     background-color: var(--q_bg_color);
     border: 1px solid var(--text_color);
@@ -189,9 +186,11 @@
     font-size: 1rem;
     margin: 5px;
     padding: 15px;
-  }
-  #slide textarea{
+}
+#slide textarea {
     resize: none;
     background-color: transparent;
-  }
-  
+}
+header {
+    height: 75px;
+}

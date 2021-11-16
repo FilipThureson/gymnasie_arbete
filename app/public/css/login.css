@@ -53,3 +53,7 @@ body {
         width: 60%;
     }
 }
+
+header {
+    height: 75px;
+}

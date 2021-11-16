@@ -195,3 +195,6 @@ aside h2 {
     resize: none;
     background-color: transparent;
 }
+header {
+    height: 75px;
+}

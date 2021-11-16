@@ -185,3 +185,6 @@ main h1 {
     color: #1e90ff;
     background-color: #fff2;
 }
+header {
+    height: 75px;
+}

@@ -60,3 +60,6 @@ main {
 #q_text {
     text-align: left;
 }
+header {
+    height: 75px;
+}
