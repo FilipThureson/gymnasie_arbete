@@ -206,9 +206,15 @@ mjx-container.MathJax {
     #icon.fading {
         opacity: 1;
     }
-
     #logotype {
         position: relative;
         left: 50%;
+    }
+    header > a img {
+        width: 70vw;
+        position: absolute;
+        top: 50%;
+        transform: translateX(-50%);
+        left: 0%;
     }
 }
