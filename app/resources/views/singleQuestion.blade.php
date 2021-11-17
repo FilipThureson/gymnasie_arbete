@@ -39,6 +39,9 @@
         <h1>Frågan:</h1>
       </div>
     @include('components/footer')
+    <script>
+      const user_fk_del = "{{ Session::get('email') }}";
+    </script>
     <script src="{{ asset('js/singleQuestion.js') }}"></script>
     <script src="{{ asset('js/singleQ_ClickScript.js') }}"></script>
     <x-head.tinymce-config/>
