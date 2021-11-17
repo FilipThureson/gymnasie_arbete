@@ -104,7 +104,7 @@ header ul li a:hover::before {
     display: none;
 }
 #logo2{
-    display: inline;
+    display: inline ;
 }
 #icon {
     border-radius: 50%;
