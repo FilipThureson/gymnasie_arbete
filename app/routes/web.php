@@ -48,6 +48,8 @@ Route::post('/questions/{parentid}/upload' , [questionController::class, 'upload
 
 Route::post('/questions/like/{id}', [questionController::class, 'likeAnswer']);
 
+Route::post('/questions/delete', [questionController::class, 'delete']);
+
 //LOGIN ROUTES
 
 Route::get('/auth/redirect', [loginController::class, 'redirect']);

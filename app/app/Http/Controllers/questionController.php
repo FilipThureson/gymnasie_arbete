@@ -32,7 +32,7 @@ class questionController extends Controller
         $answers = Questions::get_answers($parentId);
         return json_encode($answers);
     }
-    public function uploadAnswer($parentId){
+    public static function uploadAnswer($parentId){
 
         $data = [
             'post_fk' =>filter_var(request::post('post_fk'), FILTER_SANITIZE_SPECIAL_CHARS),
@@ -49,5 +49,18 @@ class questionController extends Controller
     }
     public static function likeAnswer($id){
         return Questions::like($id);
+    }
+
+    public static function delete(){
+        $post_pk = request::post('id');
+
+        
+        $question = Questions::get_one($post_pk);
+        
+        if(Session::get('email') == $question[0]->user_fk){
+            return Questions::delete($post_pk);
+        }else{
+            return false;
+        }
     }
 }

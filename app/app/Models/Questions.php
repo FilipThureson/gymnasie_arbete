@@ -10,7 +10,7 @@ class Questions
         return DB::select("select * from posts, users WHERE email_pk = user_fk and post_fk = -1 and course_fk = '{$course_pk}'ORDER BY created_at DESC LIMIT 0,20");
     }
     public static function get_one($id){
-        return DB::select("select * from posts, users  WHERE email_pk = user_fk and post_pk = '{$id}' and post_fk = -1");
+        return DB::select("select * from posts, users  WHERE email_pk = user_fk and post_pk = '{$id}'");
     }
     public static function get_your($id){
         return DB::select("select * from posts, users  WHERE email_pk = user_fk and user_fk = '{$id}'");
@@ -18,7 +18,9 @@ class Questions
     public static function upload($data){
         return DB::insert("INSERT INTO `posts` (`post_rubrik`,`post_text`,`course_fk`, `user_fk`) VALUES ('{$data->title}', '{$data->q_text}','{$data->course}', '{$data->user_fk}')");
     }
-
+    public static function delete($id){
+        return DB::delete("delete from posts where post_pk = {$id}");
+    }
     public static function upload_answers($data){
         return DB::insert("INSERT INTO `posts` (`post_rubrik`,`post_text`,`post_fk`,`course_fk`, `user_fk`) VALUES ('svar', '{$data->post_text}', '{$data->post_fk}','Response', '{$data->user_fk}')");
     }
