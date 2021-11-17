@@ -2,3 +2,6 @@
 app/config/services.php
 services.php
 .idea/workspace.xml
+*.lock
+package-lock.json
+app/composer.lock
