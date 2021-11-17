@@ -100,6 +100,12 @@ header ul li a:hover::before {
     width: 100%;
     left: 0;
 }
+#logo1{
+    display: none;
+}
+#logo2{
+    display: inline;
+}
 #icon {
     border-radius: 50%;
     height: 55px;
@@ -156,14 +162,14 @@ mjx-container.MathJax {
         width: 100vw;
         z-index: 2;
         left: 0;
-        clip-path: circle(100px at 90% -10%);
-        -webkit-clip-path: circle(100px at 90% -10%);
+        clip-path: circle(100px at 90% -15%);
+        -webkit-clip-path: circle(100px at 90% -15%);
         transition: all 0.75s ease-out;
     }
 
     #nav-links.open {
-        clip-path: circle(1300px at 90% -10%);
-        -webkit-clip-path: circle(1300px at 90% -10%);
+        clip-path: circle(1400px at 90% -10%);
+        -webkit-clip-path: circle(1400px at 90% -10%);
         transition: all 0.75s ease-out;
         pointer-events: all;
     }
@@ -210,12 +216,17 @@ mjx-container.MathJax {
         position: relative;
         left: 50%;
     }
-    header > a img {
+    #logotype img{
         width: 50vw;
         height: auto;
         position: absolute;
-        top: 50%;
-        transform: translateX(-50%);
+        align-self: center;
         left: 0%;
+    }
+    #logo1{
+        display: inline;
+    }
+    #logo2{
+        display: none;
     }
 }

@@ -1,5 +1,5 @@
 <header>
-  <a id="logotype" href="/"><img src="{{ asset('img/AUXILIUM_SIDE.png') }}" alt="AUXILIUM LOGO"></a>
+  <a id="logotype" href="/"><img id="logo1" src="{{ asset('img/AUXILIUM_TEXT.png') }}" alt="AUXILIUM LOGO"><img id="logo2" src="{{ asset('img/AUXILIUM_SIDE.PNG') }}" alt="AUXILIUM LOGO"></a>
   <div class="hamburger">
     <div class="line"></div>
     <div class="line"></div>
