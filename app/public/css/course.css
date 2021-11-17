@@ -74,7 +74,6 @@ main {
     height: calc(100vh - 150px);
     width: 90%;
     padding-left: 50px;
-    overflow-y: scroll;
 }
 main h1 {
     text-align: left;
