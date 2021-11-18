@@ -40,12 +40,15 @@ class questionController extends Controller
             'post_text' => request::post('post_text')
         ];
 
-    
-        Questions::upload_answers((object)$data);
+        $post_pk = $data->post_fk;
 
-        $answers = Questions::get_answers($parentId);
+        return $post_pk;
+        
+        //Questions::upload_answers((object)$data);
 
-        return json_encode($answers);
+        //$answers = Questions::get_answers($parentId);
+
+        //return json_encode($answers);
     }
     public static function likeAnswer($id){
         return Questions::like($id);
