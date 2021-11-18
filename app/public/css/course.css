@@ -17,10 +17,6 @@
     box-sizing: border-box;
 }
 
-body{
-    overflow-x: hidden;
-}
-
 svg {
     font-size: x-large;
 }
@@ -80,6 +76,7 @@ main {
     width: 90%;
     padding-left: 50px;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 main h1 {
     text-align: left;
