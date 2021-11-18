@@ -5,4 +5,4 @@ services.php
 *.lock
 package-lock.json
 app/composer.lock
-app/resources/views/components/head/head.blade.php
+
