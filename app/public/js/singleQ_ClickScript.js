@@ -11,8 +11,8 @@ $("main").delegate(".bi-arrows-collapse", "click", function() {
     console.log(this.id);
 
 
-    document.getElementById(this.id).style.visibility = "none";
-    $(this.id).show().hide();
+    document.getElementById(this.id).style.display = "none";
+    //$(this.id).show().hide();
     this.id
 
     document.getElementById("expand-" + this.id.split("-")[1] + "_span").style.display = "block";
@@ -25,10 +25,12 @@ $("main").delegate(".bi-arrows-collapse", "click", function() {
 $("main").delegate(".bi-arrows-expand", "click", function() {
     console.log("#" + this.id);
 
-    document.getElementById(this.id).style.visibility = "none";
-    $("#" + this.id).hide();
+    document.getElementById(this.id).style.display = "none";
+    //$("#" + this.id).hide();
+
     document.getElementById("expand-" + this.id.split("-")[1] + "_span").style.display = "none";
-    document.getElementById("expand-" + this.id.split("-")[1]).style.display = "block";
+    document.getElementById("expand-" + this.id.split("-")[1]).style.display = "none";
+    document.getElementById("collapse-" + this.id.split("-")[1]).style.display = "block";
     Array.prototype.forEach.call(document.getElementsByClassName(this.id.split("-")[1]), function(child) {
         child.style.display = "block";
     });
