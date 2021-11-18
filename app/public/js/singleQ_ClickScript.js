@@ -93,7 +93,7 @@ $("#upload_btn").on("click", function() {
         post_text: tinyMCE.activeEditor.getContent({ format: 'raw' })
     };
 
-    console.log(form_data);
+    //console.log(form_data);
     $.ajax({
         type: 'post',
         headers: {
@@ -103,6 +103,7 @@ $("#upload_btn").on("click", function() {
         data: form_data,
         datatype: "json",
         success: function(data) {
+            console.log(data);
             loadQuestions();
             socket.emit('update', socket_pathname);
         }
