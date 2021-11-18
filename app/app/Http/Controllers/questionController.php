@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Request;
 use App\Models\Questions;
+use App\Mail\sendNotification;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Mail;
+
 
 class questionController extends Controller
 {
@@ -42,8 +45,13 @@ class questionController extends Controller
 
         $send_email_to = Questions::get_one($data['post_fk'])[0]->user_fk;
         
-        $send_email_to;
-        
+        $details = [
+            'title' => "Någon har besvarat din fråga/svar!!!",
+            'responder' => Session::get('name')
+        ];
+
+        Mail::to($send_email_to)->send(new sendNotification($details));
+
         Questions::upload_answers((object)$data);
 
         $answers = Questions::get_answers($parentId);
