@@ -60,7 +60,11 @@ class questionController extends Controller
         return json_encode($answers);
     }
     public static function likeAnswer($id){
-        return Questions::like($id);
+        if(count(Questions::get_like(Session::get('email'), $id)) == 0){
+            return Questions::like($id);
+        }else{
+            return "not like";
+        }
     }
 
     public static function delete(){
