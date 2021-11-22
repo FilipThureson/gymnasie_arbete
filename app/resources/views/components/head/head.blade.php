@@ -17,6 +17,6 @@
 <script src="https://cdn.socket.io/4.3.2/socket.io.min.js" integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs" crossorigin="anonymous"></script>
 <script>
     var socket_pathname = window.location.pathname;
-    //var socket = io('http://localhost:3000/');
+    var socket = io('https://te-auxilium.se:8080');
     socket.emit('room', socket_pathname);
 </script>

@@ -14,7 +14,7 @@ class Questions
         return DB::select("select * from posts, users  WHERE email_pk = user_fk and post_pk = '{$id}'");
     }
     public static function get_your($id){
-        return DB::select("select * from posts, users  WHERE email_pk = user_fk and user_fk = '{$id}' and post_pk = -1");
+        return DB::select("select * from posts, users  WHERE email_pk = user_fk and user_fk = '{$id}' and post_fk = -1");
     }
     public static function upload($data){
         return DB::insert("INSERT INTO `posts` (`post_rubrik`,`post_text`,`course_fk`, `user_fk`) VALUES ('{$data->title}', '{$data->q_text}','{$data->course}', '{$data->user_fk}')");
