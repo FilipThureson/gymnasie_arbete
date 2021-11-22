@@ -1,10 +1,3 @@
-/*
-      tinymce.init({
-        selector: '#q_text',
-        menubar: false,
-        body_class: "mceBlackBody"
-      });
-*/
 //POSTS --Kan generaliseras?
 let active_post_id;
 $("main").delegate(".bi-arrows-collapse", "click", function() {
