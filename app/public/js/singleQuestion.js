@@ -47,9 +47,10 @@ function renderQuestions(data) {
 
 function post_rek(parent, counter) {
 
+    children = calc_children(parent);
+
     start_div(parent, counter);
 
-    children = calc_children(parent);
 
     if (children.length != 0) {
         counter++;
@@ -73,7 +74,7 @@ function calc_children(parent) {
 
 
 function start_div(parent, classname) {
-    let amountOfChildren = 1 //children.length ?? 1;
+    let amountOfChildren = children.length;
     display = "display: block;";
     displayReverse = "display: none;";
 
