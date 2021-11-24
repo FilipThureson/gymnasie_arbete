@@ -8,13 +8,13 @@ use Illuminate\Support\Facades\Session;
 class Questions
 {
     public static function get($course_pk){
-        return DB::select("select * from posts, users WHERE email_pk = user_fk and post_fk = -1 and course_fk = '{$course_pk}'ORDER BY created_at DESC LIMIT 0,20");
+        return DB::select("select * from posts, users WHERE email_pk = user_fk and post_fk = -1 and course_fk = '{$course_pk}' ORDER BY created_at DESC LIMIT 0,20");
     }
     public static function get_one($id){
         return DB::select("select * from posts, users  WHERE email_pk = user_fk and post_pk = '{$id}'");
     }
     public static function get_your($id){
-        return DB::select("select * from posts, users  WHERE email_pk = user_fk and user_fk = '{$id}' and post_fk = -1");
+        return DB::select("select * from posts, users  WHERE email_pk = user_fk and user_fk = '{$id}' and post_fk = -1  ORDER BY created_at DESC");
     }
     public static function upload($data){
         return DB::insert("INSERT INTO `posts` (`post_rubrik`,`post_text`,`course_fk`, `user_fk`) VALUES ('{$data->title}', '{$data->q_text}','{$data->course}', '{$data->user_fk}')");
