@@ -28,7 +28,7 @@ function renderQuestions(data){
         $("main").html(`<h1>Dina Frågor</h1>`);
         data.forEach(question => {
             var dateNow = new Date();
-            var dateUpload =new Date(question.create_at);
+            var dateUpload =new Date(question.created_at);
 
             // Beräknar ut antal Sekunder/Minuter/timmar/dagar sedan frågar vad upplagd
             var difference= Math.abs(dateNow-dateUpload);
