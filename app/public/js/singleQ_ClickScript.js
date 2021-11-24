@@ -1,14 +1,6 @@
-/*
-      tinymce.init({
-        selector: '#q_text',
-        menubar: false,
-        body_class: "mceBlackBody"
-      });
-*/
 //POSTS --Kan generaliseras?
 let active_post_id;
 $("main").delegate(".bi-arrows-collapse", "click", function() {
-    console.log(this.id);
 
 
     document.getElementById(this.id).style.display = "none";
@@ -23,7 +15,6 @@ $("main").delegate(".bi-arrows-collapse", "click", function() {
 });
 
 $("main").delegate(".bi-arrows-expand", "click", function() {
-    console.log("#" + this.id);
 
     document.getElementById(this.id).style.display = "none";
     //$("#" + this.id).hide();
@@ -38,7 +29,6 @@ $("main").delegate(".bi-arrows-expand", "click", function() {
 
 $("main").delegate(".bi-hand-thumbs-up", "click", function() {
     let id = this.id.substr(4);
-    console.log(id);
     $.ajax({
         type: 'post',
         headers: {
@@ -46,7 +36,11 @@ $("main").delegate(".bi-hand-thumbs-up", "click", function() {
         },
         url: `like/${id}`,
         success: function(data) {
-            loadQuestions();
+            if (data == "not like") {
+                alert("Du har redan gillat denna fråga!");
+            } else {
+                loadQuestions();
+            }
         }
     });
 });
@@ -103,7 +97,6 @@ $("#upload_btn").on("click", function() {
         data: form_data,
         datatype: "json",
         success: function(data) {
-            console.log(data);
             loadQuestions();
             socket.emit('update', socket_pathname);
         }

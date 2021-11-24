@@ -44,14 +44,15 @@ class questionController extends Controller
         ];
 
         $send_email_to = Questions::get_one($data['post_fk'])[0]->user_fk;
-        
-        $details = [
-            'title' => "Någon har besvarat din fråga/svar!!!",
-            'responder' => Session::get('name')
-        ];
-
-        Mail::to($send_email_to)->send(new sendNotification($details));
-
+        if(Session::get('email') != $send_email_to){
+            $details = [
+                'title' => "Någon har besvarat din fråga/svar!!!",
+                'responder' => Session::get('name')
+            ];
+    
+            Mail::to($send_email_to)->send(new sendNotification($details));
+    
+        }
         Questions::upload_answers((object)$data);
 
         $answers = Questions::get_answers($parentId);
@@ -59,7 +60,11 @@ class questionController extends Controller
         return json_encode($answers);
     }
     public static function likeAnswer($id){
-        return Questions::like($id);
+        if(count(Questions::get_like(Session::get('email'), $id)) == 0){
+            return Questions::like($id);
+        }else{
+            return "not like";
+        }
     }
 
     public static function delete(){

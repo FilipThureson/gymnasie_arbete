@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class Questions
 {
@@ -13,7 +14,7 @@ class Questions
         return DB::select("select * from posts, users  WHERE email_pk = user_fk and post_pk = '{$id}'");
     }
     public static function get_your($id){
-        return DB::select("select * from posts, users  WHERE email_pk = user_fk and user_fk = '{$id}'");
+        return DB::select("select * from posts, users  WHERE email_pk = user_fk and user_fk = '{$id}' and post_fk = -1");
     }
     public static function upload($data){
         return DB::insert("INSERT INTO `posts` (`post_rubrik`,`post_text`,`course_fk`, `user_fk`) VALUES ('{$data->title}', '{$data->q_text}','{$data->course}', '{$data->user_fk}')");
@@ -32,8 +33,14 @@ class Questions
         //return DB::select("select * from posts, users WHERE email_pk = user_fk and (post_fk = {$parent_id} or post_pk = {$parent_id})");
     }
 
+    public static function get_like($user_fk, $post_fk){
+        return DB::select("select * from posts_likes where user_fk = '{$user_fk}' and post_fk = {$post_fk}");
+    }
+
     public static function like($id){
+        $user_fk = Session::get('email');
         DB::update("update posts set upvotes = upvotes + 1 where post_pk = $id");
+        DB::insert("INSERT INTO `posts_likes` (`like_pk`, `user_fk`, `post_fk`) VALUES (NULL, '{$user_fk}', '{$id}')");
         return DB::select("select upvotes from posts WHERE post_pk = '{$id}'");
     }
 }
