@@ -170,6 +170,7 @@ function end_div() {
 }
 
 socket.on('update', (data) => {
+    console.log(data);
     setTimeout(() => {
         loadQuestions();
     }, 1000);
