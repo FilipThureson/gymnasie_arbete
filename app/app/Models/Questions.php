@@ -32,6 +32,10 @@ class Questions
 
         //return DB::select("select * from posts, users WHERE email_pk = user_fk and (post_fk = {$parent_id} or post_pk = {$parent_id})");
     }
+    public static function getNewResponse($post_fk){
+        return DB::select("select * from (select * from posts, users where email_pk=user_fk order by post_fk, post_pk) posts, (select @pv := '{$post_fk}') initialisation where find_in_set(post_fk, @pv) > 0 and @pv := concat(@pv, ',', post_pk)");
+
+    }
 
     public static function get_like($user_fk, $post_fk){
         return DB::select("select * from posts_likes where user_fk = '{$user_fk}' and post_fk = {$post_fk}");

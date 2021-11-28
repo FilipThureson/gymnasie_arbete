@@ -50,6 +50,9 @@ Route::post('/questions/like/{id}', [questionController::class, 'likeAnswer']);
 
 Route::post('/questions/delete', [questionController::class, 'delete']);
 
+Route::post('/questions/answerUpdate', [questionController::class, 'answerUpdate']);
+
+
 //LOGIN ROUTES
 
 Route::get('/auth/redirect', [loginController::class, 'redirect']);

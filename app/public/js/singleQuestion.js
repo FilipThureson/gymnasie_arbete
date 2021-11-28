@@ -170,8 +170,35 @@ function end_div() {
 }
 
 socket.on('update', (data) => {
-    console.log(data);
+    //console.log(data);
     setTimeout(() => {
-        loadQuestions();
-    }, 1000);
+        console.log(data);
+        test(data);
+    }, 10);
 })
+
+function test(data){
+    htmlstring = "";
+    delete(htmlstring);
+    $.ajax({
+        type: 'post',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: `/questions/answerUpdate`,
+        data: data,
+        datatype: "json",
+        success: function(data) {
+            htmlstring = "";
+            console.log(JSON.parse(data));
+            addNewAnswer(JSON.parse(data).at(-1));
+        }
+    });
+}
+
+function addNewAnswer(post){
+    console.log(post);
+    post_rek(post, 1);
+    document.getElementById(`post${post.post_fk}`).innerHTML += htmlstring;
+    MathJax.typeset();
+}

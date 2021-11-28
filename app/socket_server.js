@@ -19,6 +19,7 @@ io.on('connection', (socket) => {
         socket.join(data);
     });
     socket.on('update',(data)=>{
+        console.log(data);
         io.to(data.room).emit('update', data);
     });
 });

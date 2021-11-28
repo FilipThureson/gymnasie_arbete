@@ -108,6 +108,7 @@ $("#upload_btn").on("click", function() {
     });
     document.getElementById("slide").style.left = "100%";
     document.getElementById("slide_left").style.left = "-100%";
+    tinymce.activeEditor.setContent('');
 });
 
 $("main").delegate(".bi-trash", "click", function() {

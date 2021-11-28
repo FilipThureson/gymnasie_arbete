@@ -79,4 +79,13 @@ class questionController extends Controller
             return false;
         }
     }
+    public function answerUpdate(){
+        $post_fk = request::post('postParent');
+
+        
+        $answers = Questions::getNewResponse($post_fk);
+        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
+        $out->writeln(json_encode($answers));
+        return json_encode($answers);
+    }
 }
