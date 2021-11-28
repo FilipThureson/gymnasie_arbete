@@ -97,8 +97,13 @@ $("#upload_btn").on("click", function() {
         data: form_data,
         datatype: "json",
         success: function(data) {
-            loadQuestions();
-            socket.emit('update', socket_pathname);
+            socket_data = {
+                room : socket_pathname,
+                postToUpdate : JSON.parse(data)[0].post_pk,
+                postParent : form_data.post_fk
+            }
+            //loadQuestions();
+            socket.emit('update', socket_data);
         }
     });
     document.getElementById("slide").style.left = "100%";

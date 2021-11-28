@@ -19,7 +19,7 @@ io.on('connection', (socket) => {
         socket.join(data);
     });
     socket.on('update',(data)=>{
-        io.to(data).emit('update', socket.id);
+        io.to(data.room).emit('update', data);
     });
 });
  
