@@ -12,15 +12,15 @@
       <h1>Kurser</h1>
       <div id="wrapper">
 
-        @foreach ($courses as $course)
-        
+        @foreach ($data['courses'] as $course)
+
         <div class="question">
             <h2>{{ $course->course_pk }}</h2>
             <div><p>0</p></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <p> {{$data['quotes'][$course->course_pk]->citat }}</p>
             <a href="{{$course->course_pk}}">Gå till frågor</a>
         </div>
-          
+
         @endforeach
       </div>
     </main>

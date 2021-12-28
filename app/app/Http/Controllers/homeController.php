@@ -14,6 +14,6 @@ class homeController extends Controller
             return redirect('/login');
         }
 
-        return view("home",  ['courses' => Course::get_all()]);
+        return view("home",  ['data' => Course::get_all()]);
     }
 }
