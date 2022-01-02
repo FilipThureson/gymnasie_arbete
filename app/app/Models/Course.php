@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 class Course
 {
     public static function get($course_pk){
-        return DB::table('courses')->where('course_fk' , $course_pk)->get();
+        return DB::table('courses')->where('course_pk' , $course_pk)->get();
     }
     public static function get_all(){
         $courses =  DB::select('select * from courses');
