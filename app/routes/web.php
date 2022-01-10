@@ -23,6 +23,8 @@ Route::get('/', [homeController::class, 'home']);
 
 Route::get('/login', [loginController::class, 'page']);
 
+Route::get('/5625', [homeController::class, 'rickroll']);
+
 Route::get('/logout', function(){
    \Illuminate\Support\Facades\Session::flush();
    return redirect('/');

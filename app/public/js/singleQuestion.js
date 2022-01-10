@@ -97,6 +97,7 @@ function start_div(parent, classname) {
         }
         if (classname > 2) {
             displayReverseC = "display: block;";
+
         }
     }
     if (parent.post_fk == -1) {
