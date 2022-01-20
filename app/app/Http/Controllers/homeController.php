@@ -16,7 +16,4 @@ class homeController extends Controller
 
         return view("home",  ['data' => Course::get_all()]);
     }
-    public static function rickroll(){
-        return redirect('https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley');
-    }
 }
