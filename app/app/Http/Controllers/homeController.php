@@ -10,7 +10,7 @@ class homeController extends Controller
 {
     public static function home()
     {
-        if(Session::get('google_token') == null){
+        if(Session::get('token') == null){
             return redirect('/login');
         }
 

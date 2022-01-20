@@ -6,11 +6,24 @@ use Illuminate\Support\Facades\DB;
 
 class User
 {
-    public static function login($user){
-        if(DB::select("select email_pk from users WHERE email_pk = '{$user->getEmail()}'" )){
-            return false;
-        }else{
-            return DB::insert("INSERT INTO users (email_pk,name, avatar_url) VALUES ('{$user->getEmail()}','{$user->getName()}', '{$user->getAvatar()}')");
-        }
+    public static function login($email){
+        $user = DB::table('users')
+        ->where('email_pk', '=', $email)
+        ->get();
+
+        return $user;
+    }
+    public static function register($user){
+
+        $success = DB::table('users')
+        ->insert($user);
+        return $success;
+    }
+
+    public static function checkEmailExists($email){
+        $user = DB::table('users')
+        ->where('email_pk', '=', $email)
+        ->value('email_pk');
+        return $user;
     }
 }

@@ -5,7 +5,8 @@ use App\Http\Controllers\homeController;
 use App\Http\Controllers\questionController;
 
     use App\Http\Controllers\loginController;
-    use Illuminate\Support\Facades\Route;
+use Illuminate\Auth\Events\Login;
+use Illuminate\Support\Facades\Route;
     use Laravel\Socialite\Facades\Socialite;
 
     /*
@@ -22,6 +23,8 @@ use App\Http\Controllers\questionController;
 Route::get('/', [homeController::class, 'home']);
 
 Route::get('/login', [loginController::class, 'page']);
+
+Route::get('/register', [loginController::class, 'registerPage']);
 
 Route::get('/logout', function(){
    \Illuminate\Support\Facades\Session::flush();
@@ -55,6 +58,6 @@ Route::post('/questions/answerUpdate', [questionController::class, 'answerUpdate
 
 //LOGIN ROUTES
 
-Route::get('/auth/redirect', [loginController::class, 'redirect']);
+//Route::get('/auth/redirect', [loginController::class, 'redirect']);
 
-Route::get('/auth/callback', [loginController::class, 'login']);
+//Route::get('/auth/callback', [loginController::class, 'login']);

@@ -12,13 +12,14 @@
             {{ $error }}
         </span>
 
-        <form action="/api/login" method="post">
+        <form action="/api/register" method="post">
+            <input type="name" name="name" placeholder="Firstname Surname" required>
             <input type="email" name="email" placeholder="Email:" required>
             <input type="password" name="password" placeholder="Password:" required>
-            <button type="submit">Login</button>
+            <button type="submit">Register</button>
         </form>
 
-        <a style="text-decoration: underline;" href="/register">Register</a>
+        <a style="text-decoration: underline;" href="/login">login</a>
     </div>
 </body>
 </html>

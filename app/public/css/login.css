@@ -23,12 +23,20 @@ body {
     border-radius: 5px;
     box-shadow: 0px 0px 20px 2px black;
 }
-#google_link {
-    width: 40%;
+.loginDiv form{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
-#google_img {
-    width: 100%;
+.loginDiv button{
+    color: black;
 }
+span{
+    margin-top: 20px;
+    color: red;
+}
+
 @media screen and (max-width: 1200px) {
     .loginDiv {
         width: 60vw;
