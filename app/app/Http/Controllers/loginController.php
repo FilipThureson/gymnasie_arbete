@@ -37,22 +37,23 @@ class loginController
             return redirect('/login');
         }
         //tries to login!
-        $user = User::login($email)[0];
-        if(!$user){
+        $user = User::login($email);
+
+        if(count($user)==0){
             //Did not find an account with that email!
             Session::put('login-error', 'Email is not Registered');
             return redirect('/login');
-        }else if(Hash::check($password, $user->password)){
+        }else if(Hash::check($password, $user[0]->password)){
             //check if user has verified email or else we cant be sure that they are from the kfvelev.se domain!
-            if($user->email_verified){
+            if($user[0]->email_verified){
                 //user has logged in
                 //put session info!
-                if(!User::newToken($user->email_pk)) return back(); //generate token each time user logges in!
+                if(!User::newToken($user[0]->email_pk)) return back(); //generate token each time user logges in!
                 Session::flush(); //remove previous errors!
-                Session::put('token', $user->token);
-                Session::put('name', $user->name);
-                Session::put('avatar', $user->avatar_url);
-                Session::put('email', $user->email_pk);
+                Session::put('token', $user[0]->token);
+                Session::put('name', $user[0]->name);
+                Session::put('avatar', $user[0]->avatar_url);
+                Session::put('email', $user[0]->email_pk);
                 return redirect('/');
             }
             else{
