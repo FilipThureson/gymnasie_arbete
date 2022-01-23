@@ -22,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/login', [loginController::class, 'login']);
 
 Route::post('/register', [loginController::class, 'register']);
+
+Route::get('/confirmEmail/{token}', [loginController::class, 'confirmEmail']);

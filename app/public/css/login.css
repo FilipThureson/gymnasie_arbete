@@ -29,6 +29,9 @@ body {
     flex-direction: column;
     justify-content: space-around;
 }
+.loginDiv form input{
+    color:black;
+}
 .loginDiv button{
     color: black;
 }

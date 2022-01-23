@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\handleSession;
+use App\Mail\confirmEmail;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Request;
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Mail;
+
 
 //use Laravel\Socialite\Facades\Socialite;
 
@@ -42,14 +43,23 @@ class loginController
             Session::put('login-error', 'Email is not Registered');
             return redirect('/login');
         }else if(Hash::check($password, $user->password)){
-            //user has logged in
-            //put session info!
-            Session::flush(); //remove previous errors!
-            Session::put('token', $user->token);
-            Session::put('name', $user->name);
-            Session::put('avatar', $user->avatar_url);
-            Session::put('email', $user->email_pk);
-            return redirect('/');
+            //check if user has verified email or else we cant be sure that they are from the kfvelev.se domain!
+            if($user->email_verified){
+                //user has logged in
+                //put session info!
+                if(!User::newToken($user->email_pk)) return back(); //generate token each time user logges in!
+                Session::flush(); //remove previous errors!
+                Session::put('token', $user->token);
+                Session::put('name', $user->name);
+                Session::put('avatar', $user->avatar_url);
+                Session::put('email', $user->email_pk);
+                return redirect('/');
+            }
+            else{
+                Session::put('login-error', 'You must verify your email address!');
+                return redirect('/login');
+            }
+
         }else{
             //wrong password!
             Session::put('login-error', 'Incorrect password!');
@@ -95,6 +105,10 @@ class loginController
         // if successfully  registered an account return to login-page
         //else return to register page with error
         if($success){
+            $details = [
+                'token' => $user['token']
+            ];
+            Mail::to($user['email_pk'])->send(new confirmEmail($details));
             Session::remove('login-error');
             Session::remove('register-error');
             return redirect('/login');
@@ -102,5 +116,11 @@ class loginController
             Session::put('register-error', 'There where an error creating your account');
             return back();
         }
+    }
+    public function confirmEmail($token)
+    {
+        # code...
+        if(!User::confirmEmail($token)) return "Error Please Try Again!";
+        return redirect('/login');
     }
 }

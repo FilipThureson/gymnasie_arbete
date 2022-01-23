@@ -26,4 +26,17 @@ class User
         ->value('email_pk');
         return $user;
     }
+    public static function newToken($email){
+        $user = DB::table('users')
+        ->where('email_pk', '=' , $email)
+        ->update(['token' => bin2hex(random_bytes(30))]);
+        return $user;
+    }
+    public static function confirmEmail($token)
+    {
+        $user = DB::table('users')
+        ->where('token', '=' , $token)
+        ->update(['token' => bin2hex(random_bytes(30)), 'email_verified' => true]);
+        return $user;
+    }
 }
