@@ -170,6 +170,7 @@ main h1 {
 .question div:hover {
     cursor: default;
 }
+
 .question a {
     position: absolute;
     bottom: 10px;
