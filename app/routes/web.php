@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\courseController;
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\profileController;
 use App\Http\Controllers\questionController;
 use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
@@ -51,6 +52,8 @@ Route::post('/questions/like/{id}', [questionController::class, 'likeAnswer']);
 Route::post('/questions/delete', [questionController::class, 'delete']);
 
 Route::post('/questions/answerUpdate', [questionController::class, 'answerUpdate']);
+
+Route::get('/profile/{id}', [profileController::class, 'index']);
 
 
 //LOGIN ROUTES

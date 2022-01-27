@@ -1,0 +1,21 @@
+.wrapper{
+    width: 95vw;
+    min-height: 300px;
+    z-index: 10;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pfpSettings{
+    min-width: 500px;
+    height: 200px;
+}
+.profilePicture{
+    width: 128px;
+    height: 128px;
+    border: 2px solid black;
+    border-radius: 50%;
+}

@@ -6,20 +6,19 @@
 </head>
 <body>
     <div class="loginDiv">
-       
-    <form action="/api/login" method="post">
+
+    <form action="/api/register" method="post">
              <img id="logo" src="{{ asset('img/logo.png') }}" alt="logo">
 
              <label for="name">Namn</label>
 
-             <input type="name" name="name" placeholder="Firstname Surname" required>
+             <input type="name" name="name" placeholder="Full name" required>
 
             <label for="username">Email</label>
-             <input type="text" name="email" placeholder="Email or Phone" id="username">
+             <input type="email" name="email" placeholder="Email" id="username" required>
 
             <label for="password">Password</label>
-            <input type="password" name="password" placeholder="Password" id="password">
-            <label for="password"><a href="#">Glömt lösenord?</a>
+            <input type="password" name="password" placeholder="Password" id="password" required>
             </label>
 
             <span class="erronspan">
@@ -27,7 +26,9 @@
             </span>
 
             <button>Registrera dig</button>
-            <button><a href="/login">Logga in</a></button>
+            <span>
+                Har du redan ett Konto? <a class="register-link" href="/login">Logga in istället!</a>
+            </span>
         </form>
     </div>
 </body>
