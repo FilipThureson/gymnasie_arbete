@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Mail;
 
 //use Laravel\Socialite\Facades\Socialite;
 
-class loginController
+class userController
 {
     //Loginpage
     public static function page(){
@@ -120,7 +120,7 @@ class loginController
     }
     public function confirmEmail($token)
     {
-        # code...
+        //confirmes Email
         if(!User::confirmEmail($token)) return "Error Please Try Again!";
         return redirect('/login');
     }

@@ -3,11 +3,8 @@
 use App\Http\Controllers\courseController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\questionController;
-
-    use App\Http\Controllers\loginController;
-use Illuminate\Auth\Events\Login;
+use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
-    use Laravel\Socialite\Facades\Socialite;
 
     /*
     |--------------------------------------------------------------------------
@@ -22,9 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [homeController::class, 'home']);
 
-Route::get('/login', [loginController::class, 'page']);
+Route::get('/login', [userController::class, 'page']);
 
-Route::get('/register', [loginController::class, 'registerPage']);
+Route::get('/register', [userController::class, 'registerPage']);
 
 Route::get('/logout', function(){
    \Illuminate\Support\Facades\Session::flush();
