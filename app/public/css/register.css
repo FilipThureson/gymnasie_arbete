@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+body {
+    background-color: #1a202c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.loginDiv {
+    width: 40vw;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: #323d54;
+    align-items: center;
+    justify-content: center;
+    color: #e3e3e3;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 2px black;
+}
+.loginDiv form{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.loginDiv form input{
+    color:black;
+}
+.loginDiv button{
+    color: black;
+}
+span{
+    margin-top: 20px;
+    color: red;
+}
+
+@media screen and (max-width: 1200px) {
+    .loginDiv {
+        width: 60vw;
+    }
+    #google_link {
+        width: 45%;
+    }
+}
+@media screen and (max-width: 800px) {
+    .loginDiv {
+        width: 90vw;
+    }
+    #google_link {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .loginDiv {
+        width: 90vw;
+    }
+    #google_link {
+        width: 60%;
+    }
+}
+
+header {
+    height: 75px;
+}

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <x-head.head/>
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
 </head>
 <body>
     <div class="loginDiv">
