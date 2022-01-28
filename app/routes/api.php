@@ -25,5 +25,6 @@ Route::post('/register', [userController::class, 'register']);
 
 Route::get('/confirmEmail/{token}', [userController::class, 'confirmEmail']);
 
-Route::get('/resetPassword/{token}', [userController::class, 'resetPassword']);
+Route::post('/resetPassword', [userController::class, 'resetPassword']);
 
+Route::post('/resetPasswordFrom/{token}', [userController::class, 'resetPasswordForm']);

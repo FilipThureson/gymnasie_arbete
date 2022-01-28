@@ -16,7 +16,7 @@
 
             <label for="password">Password</label>
             <input type="password" name="password" placeholder="Password" id="password" required>
-            <label for="password"><a href="#">Glömt lösenord?</a>
+            <label for="password"><a href="/forgotPassword">Glömt lösenord?</a>
             </label>
 
             <span class="erronspan">

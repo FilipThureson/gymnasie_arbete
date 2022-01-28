@@ -13,6 +13,13 @@ class User
         ->get();
         return $user;
     }
+
+    public static function getToken($email)
+    {
+        $token = DB::table('users')->where('email_pk', '=', $email)->value('token');
+        return $token;
+    }
+
     public static function register($user){
         //write new user to database
         $success = DB::table('users')
@@ -39,6 +46,13 @@ class User
         $user = DB::table('users')
         ->where('token', '=' , $token) //Finds user with the token sent in email!
         ->update(['token' => bin2hex(random_bytes(30)), 'email_verified' => true]); //Changes token and changes email_veritfied to true!
+        return $user;
+    }
+    public static function resetPassword($token, $password)
+    {
+        $user = DB::table('users')
+        ->where('token', '=' , $token) //Finds user with the token sent in email!
+        ->update(['token' => bin2hex(random_bytes(30)), 'password' => $password]); //Changes token and changes email_veritfied to true!
         return $user;
     }
 }

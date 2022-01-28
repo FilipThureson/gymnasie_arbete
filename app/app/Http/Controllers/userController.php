@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\confirmEmail;
+use App\Mail\resetPassword;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -123,5 +124,49 @@ class userController
         //confirmes Email
         if(!User::confirmEmail($token)) return "Error Please Try Again!";
         return redirect('/login');
+    }
+    public function forgotPassView()
+    {
+        # code...
+        return view('forgotPassword', ['error' => Session::get('forgotPasswordErrors')]);
+    }
+
+    public function resetPassword()
+    {
+        $fullname = filter_var(Request::post('fullname'), FILTER_SANITIZE_SPECIAL_CHARS);
+        $email = filter_var(Request::post('email'), FILTER_SANITIZE_EMAIL);
+
+        $details = [
+            'fullname' => $fullname,
+            'token' => User::getToken($email)
+        ];
+
+        Mail::to($email)->send(new resetPassword($details));
+        return view('confirm', ['data' => 'Email has been sent!']);
+    }
+    public function resetPasswordPage($token)
+    {
+        return view('resetPasswordPage', ['token' => $token, 'error'=> Session::get('resetPasswordErrors')]);
+    }
+    public function resetPasswordForm($token)
+    {
+        $password = filter_var(Request::post('password'), FILTER_SANITIZE_SPECIAL_CHARS);
+        $password_confirm = filter_var(Request::post('passwordConfirm'), FILTER_SANITIZE_SPECIAL_CHARS);
+
+        if($password != $password_confirm){
+            Session::put('resetPasswordErrors', 'Passwords must match');
+            return back();
+        }
+
+        $password = Hash::make($password);
+
+        $state = User::resetPassword($token, $password);
+
+        if($state){
+            return redirect('/login');
+        }else{
+            Session::put('resetPasswordErrors', 'Error Please Try Again!');
+            return back();
+        }
     }
 }

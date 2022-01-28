@@ -29,6 +29,10 @@ Route::get('/logout', function(){
    return redirect('/');
 });
 
+Route::get('/forgotPassword', [userController::class, 'forgotPassView']);
+
+Route::get('/resetPassword/{token}', [userController::class, 'resetPasswordPage']);
+
 Route::get('/{course}', [courseController::class, 'firstPage'])->where('course', '[A-z]+');
 
 Route::post('/{course}/upload', [courseController::class, 'upload']);
@@ -54,6 +58,8 @@ Route::post('/questions/delete', [questionController::class, 'delete']);
 Route::post('/questions/answerUpdate', [questionController::class, 'answerUpdate']);
 
 Route::get('/profile/{id}', [profileController::class, 'index']);
+
+
 
 
 //LOGIN ROUTES
