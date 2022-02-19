@@ -1,12 +1,12 @@
 const pathname = window.location.pathname;
 function loadQuestions(){
-    
+
     $.ajax({
         type: 'post',
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        url: `${pathname}/getAll`,  
+        url: `${pathname}/getAll`,
         success: function (data){
             renderQuestions(JSON.parse(data));
         }
@@ -18,7 +18,7 @@ $('#upload_form').submit(e=>{
 });
 
 $('#upload_btn').on('click',function(e){
-    
+
     var course = $('#course').val();
     $("main").html("");
 
@@ -55,7 +55,7 @@ function renderQuestions(data){
     if(data.length >0){
         $("main").html(`<h1>${pathname.substring(1)}</h1>`);
         data.forEach(question => {
-            
+
             var dateNow = new Date();
             var dateUpload =new Date(question.created_at);
 
@@ -87,11 +87,15 @@ function renderQuestions(data){
                 seconds=  Math.floor(seconds);
                 seconds += " Sekunder Sedan"
             }
-            
+
+
             $("main").append(`
                 <div class="question">
                     <br>
-                    <h3>${question.post_rubrik}</h3><span>${seconds}, av <a href="#">@${question.name}</a></span>
+                    <div>
+                    <h3>${question.post_rubrik}</h3>
+                    <span>${seconds}, av <a href="#">@${question.name}</a></span>
+                    </div>
                     <p>${question.post_text}</p>
                     <a class="link_to_question" href="/questions/${question.post_pk}">Öppna Frågan</a>
                     <br>

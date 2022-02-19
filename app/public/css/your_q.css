@@ -63,3 +63,24 @@ main {
 header {
     height: 75px;
 }
+
+@media screen and (max-width: 800px) {
+    main h1{
+        text-align: center;
+    }
+
+    .question span {
+        position: relative;
+        right: 0;
+    }
+
+    .question div{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    h3 {
+        padding: 0;
+    }
+}
