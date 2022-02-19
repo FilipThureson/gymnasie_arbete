@@ -39,7 +39,6 @@ class userController
         }
         //tries to login!
         $user = User::login($email);
-
         if(count($user)==0){
             //Did not find an account with that email!
             Session::put('login-error', 'Email is not Registered');
