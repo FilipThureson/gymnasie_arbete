@@ -13,7 +13,7 @@ class Questions
         ->join('users', 'users.email_pk', '=', 'posts.user_fk')
         ->where('post_fk', '=' , -1)
         ->where('course_fk', '=', $course_pk)
-        ->orderByDesc('created_at')
+        ->orderByDesc('posts.created_at')
         ->get();
     }
     public static function get_one($id){

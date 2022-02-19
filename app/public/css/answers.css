@@ -62,3 +62,18 @@
 header {
     height: 75px;
 }
+
+@media screen and (max-width: 800px) {
+    #slide_left span {
+       border-bottom: 0;
+    }
+
+    .svgClass svg {
+        width: 30px;
+        height: auto;
+
+    }
+    .likenumbeR {
+        font-size: 20px;
+    }
+}
