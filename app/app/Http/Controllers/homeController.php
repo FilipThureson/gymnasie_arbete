@@ -10,13 +10,10 @@ class homeController extends Controller
 {
     public static function home()
     {
-        if(Session::get('google_token') == null){
+        if(Session::get('token') == null){
             return redirect('/login');
         }
 
         return view("home",  ['data' => Course::get_all()]);
-    }
-    public static function rickroll(){
-        return redirect('https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley');
     }
 }

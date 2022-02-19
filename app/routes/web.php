@@ -2,11 +2,10 @@
 
 use App\Http\Controllers\courseController;
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\profileController;
 use App\Http\Controllers\questionController;
-
-    use App\Http\Controllers\loginController;
-    use Illuminate\Support\Facades\Route;
-    use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\userController;
+use Illuminate\Support\Facades\Route;
 
     /*
     |--------------------------------------------------------------------------
@@ -21,14 +20,18 @@ use App\Http\Controllers\questionController;
 
 Route::get('/', [homeController::class, 'home']);
 
-Route::get('/login', [loginController::class, 'page']);
+Route::get('/login', [userController::class, 'page']);
 
-Route::get('/5625', [homeController::class, 'rickroll']);
+Route::get('/register', [userController::class, 'registerPage']);
 
 Route::get('/logout', function(){
    \Illuminate\Support\Facades\Session::flush();
    return redirect('/');
 });
+
+Route::get('/forgotPassword', [userController::class, 'forgotPassView']);
+
+Route::get('/resetPassword/{token}', [userController::class, 'resetPasswordPage']);
 
 Route::get('/{course}', [courseController::class, 'firstPage'])->where('course', '[A-z]+');
 
@@ -54,9 +57,13 @@ Route::post('/questions/delete', [questionController::class, 'delete']);
 
 Route::post('/questions/answerUpdate', [questionController::class, 'answerUpdate']);
 
+Route::get('/profile/{id}', [profileController::class, 'index']);
+
+
+
 
 //LOGIN ROUTES
 
-Route::get('/auth/redirect', [loginController::class, 'redirect']);
+//Route::get('/auth/redirect', [loginController::class, 'redirect']);
 
-Route::get('/auth/callback', [loginController::class, 'login']);
+//Route::get('/auth/callback', [loginController::class, 'login']);

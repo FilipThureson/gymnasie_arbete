@@ -11,7 +11,7 @@ class courseController extends Controller
 {
     //Retuns all questions in one course
     public static function firstPage($course_pk){
-        if(Session::get('google_token') == null){
+        if(Session::get('token') == null){
             return redirect('/');
         }
         $course = Course::get($course_pk);
@@ -23,7 +23,7 @@ class courseController extends Controller
     }
     //RETURNS ONE QUESTON IF THE $id equals a questions in a $course
     public static function oneQuestion($id){
-        if(Session::get('google_token') == null){
+        if(Session::get('token') == null){
             return redirect('/');
         }
         $questions = Questions::get_one($id);
@@ -35,10 +35,10 @@ class courseController extends Controller
 
     public static function ajax_getAll($course_pk){
         $all_questions = Questions::get($course_pk);
-        
+
         return json_encode($all_questions);
     }
-    
+
     public static function upload($course_pk){
         $data = [
             'course' => $course_pk,
@@ -50,5 +50,5 @@ class courseController extends Controller
         $test = Questions::upload((object)$data);
         return $test;
     }
-    
+
 }

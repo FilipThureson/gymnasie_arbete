@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Mail;
 class questionController extends Controller
 {
     public static function yourQuestions($id){
-        if(Session::get('google_token') == null){
+        if(Session::get('token') == null){
             return redirect('/');
         }
         if($id != Session::get('email')){
@@ -28,7 +28,7 @@ class questionController extends Controller
 
     public static function getOne($id){
         $question = Questions::get_one($id);
-        
+
         return json_encode($question);
     }
     public static function getAnswers($parentId){
@@ -49,9 +49,9 @@ class questionController extends Controller
                 'title' => "Någon har besvarat din fråga/svar!!!",
                 'responder' => Session::get('name')
             ];
-    
+
             Mail::to($send_email_to)->send(new sendNotification($details));
-    
+
         }
         Questions::upload_answers((object)$data);
 
@@ -70,9 +70,9 @@ class questionController extends Controller
     public static function delete(){
         $post_pk = request::post('id');
 
-        
+
         $question = Questions::get_one($post_pk);
-        
+
         if(Session::get('email') == $question[0]->user_fk){
             return Questions::delete($post_pk);
         }else{
@@ -82,10 +82,8 @@ class questionController extends Controller
     public function answerUpdate(){
         $post_fk = request::post('postParent');
 
-        
+
         $answers = Questions::getNewResponse($post_fk);
-        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
-        $out->writeln(json_encode($answers));
         return json_encode($answers);
     }
 }

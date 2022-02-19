@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\userController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/login', [userController::class, 'login']);
+
+Route::post('/register', [userController::class, 'register']);
+
+Route::get('/confirmEmail/{token}', [userController::class, 'confirmEmail']);
+
+Route::post('/resetPassword', [userController::class, 'resetPassword']);
+
+Route::post('/resetPasswordFrom/{token}', [userController::class, 'resetPasswordForm']);
