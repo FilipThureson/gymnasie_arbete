@@ -12,7 +12,7 @@
              <img id="logo" src="{{ asset('img/logo.png') }}" alt="logo">
 
             <label for="username">Email</label>
-             <input type="text" name="email" placeholder="Email or Phone" id="username" required>
+            <input type="email" name="email" placeholder="Email" id="username" required>
 
             <label for="password">Password</label>
             <input type="password" name="password" placeholder="Password" id="password" required>
