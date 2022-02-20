@@ -10,7 +10,7 @@
     <h1>Confirm Email!</h1>
     <p>
         Confirm your email by clicking this link!
-        <a href="http://localhost:8000/api/confirmEmail/{{ $details['token'] }}">Confirm Email!</a>
+        <a href="https://te-auxilium.se/api/confirmEmail/{{ $details['token'] }}">Confirm Email!</a>
     </p>
 </body>
 </html>
