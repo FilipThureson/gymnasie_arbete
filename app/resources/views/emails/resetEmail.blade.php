@@ -10,7 +10,7 @@
     <h1>Reset Password</h1>
     <p>
         Hello {{ $details['fullname']}}, You've requested to reset your password to do that click the following link!
-        <a href="http://localhost:8000/resetPassword/{{ $details['token'] }}">Reset Password</a>
+        <a href="https://te-auxilium.se/resetPassword/{{ $details['token'] }}">Reset Password</a>
     </p>
 </body>
 </html>
