@@ -11,3 +11,5 @@ function newQuote() {
   var randomQuote = Math.floor(Math.random() * (quotes.length));
   document.getElementById('quoteDisplay').innerHTML = quotes[randomQuote];
 }
+
+var test = "test";
