@@ -18,5 +18,5 @@
 <script>
     var socket_pathname = window.location.pathname;
     var socket = io('http://localhost:3000');
-    //socket.emit('room', socket_pathname);
+    socket.emit('room', socket_pathname);
 </script>
