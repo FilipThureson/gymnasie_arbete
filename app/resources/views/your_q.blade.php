@@ -9,10 +9,10 @@
     @include('components/nav')
 
     <main>
-        
+
     </main>
 
-    @include('components/footer')
+
     <script src="{{ asset('js/your_q_ajax.js') }}"></script>
 </body>
 </html>
